@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Productos</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f5f7fa;
+      padding: 40px;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .card {
+      border: none;
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+      max-width: 350px;
+      margin: auto;
+    }
+    .card:hover {
+      transform: translateY(-10px);
+    }
+    .card-img-top {
+      max-height: 200px;
+      object-fit: contain;
+      cursor: pointer; /* Indica que se puede hacer clic */
+    }
+    .btn-secondary {
+      border-radius: 30px;
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+    .card-text span {
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 id="titulo"></h1>
+
+  <div class="text-center mb-4">
+    <a href="catalogo.html" class="btn btn-secondary">⬅ Regresar</a>
+  </div>
+
+  <div class="container">
+    <div class="row g-4" id="cardsContainer">
+      <!-- Tarjetas dinámicas -->
+    </div>
+  </div>
+
+  <!-- Modal para imagen grande -->
+  <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-body p-0">
+          <img src="" id="modalImage" class="img-fluid w-100" alt="Producto">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // Obtener parámetro de la URL
+  const params = new URLSearchParams(window.location.search);
+  const tipo = params.get("tipo");
+
+  // Diccionario de productos
+  const productos = {
+    mandalas: [
+      { img: "images/mandalas/mandalauno.png", nombre: "Mandala 1", modelo: "M-001", medidas: "20x20 cm", material: "MDF", precio: "$150", desc: "Diseño decorativo único." },
+      { img: "images/mandalas/mandalados.png", nombre: "Mandala 1", modelo: "M-001", medidas: "20x20 cm", material: "MDF", precio: "$150", desc: "Diseño decorativo único." },
+      { img: "images/mandalas/mandalatres.png", nombre: "Mandala 1", modelo: "M-001", medidas: "20x20 cm", material: "MDF", precio: "$150", desc: "Diseño decorativo único." },
+      { img: "images/mandalas/mandalacuatro.png", nombre: "Mandala 1", modelo: "M-001", medidas: "20x20 cm", material: "MDF", precio: "$150", desc: "Diseño decorativo único." },
+      { img: "images/mandalas/mandalacinco.png", nombre: "Mandala 1", modelo: "M-001", medidas: "20x20 cm", material: "MDF", precio: "$150", desc: "Diseño decorativo único." },
+      { img: "images/mandalas/mandalaseis.png", nombre: "Mandala 1", modelo: "M-001", medidas: "20x20 cm", material: "MDF", precio: "$150", desc: "Diseño decorativo único." },
+      { img: "images/mandalas/mandalasiete.png", nombre: "Mandala 1", modelo: "M-001", medidas: "20x20 cm", material: "MDF", precio: "$150", desc: "Diseño decorativo único." },
+      { img: "images/mandalas/mandalaocho.png", nombre: "Mandala 1", modelo: "M-001", medidas: "20x20 cm", material: "MDF", precio: "$150", desc: "Diseño decorativo único." },
+      { img: "images/mandalas/mandalanueve.png", nombre: "Mandala 1", modelo: "M-001", medidas: "20x20 cm", material: "MDF", precio: "$150", desc: "Diseño decorativo único." },
+      { img: "images/mandalas/mandaladiez.png", nombre: "Mandala 1", modelo: "M-001", medidas: "20x20 cm", material: "MDF", precio: "$150", desc: "Diseño decorativo único." },
+      { img: "images/mandalas/mandalaonce.png", nombre: "Mandala 1", modelo: "M-001", medidas: "20x20 cm", material: "MDF", precio: "$150", desc: "Diseño decorativo único." },
+      { img: "images/mandalas/mandaladoce.png", nombre: "Mandala 1", modelo: "M-001", medidas: "20x20 cm", material: "MDF", precio: "$150", desc: "Diseño decorativo único." }
+   
+    ],
+    bodas: [
+      { img: "images/bodas/letrerouno.png", nombre: "Mandala 1", modelo: "M-001", medidas: "20x20 cm", material: "MDF", precio: "$150", desc: "Diseño decorativo único." },
+      { img: "images/bodas/letrerodos.png", nombre: "Mandala 1", modelo: "M-001", medidas: "20x20 cm", material: "MDF", precio: "$150", desc: "Diseño decorativo único." },
+      { img: "images/bodas/letrerotres.png", nombre: "Mandala 1", modelo: "M-001", medidas: "20x20 cm", material: "MDF", precio: "$150", desc: "Diseño decorativo único." },
+      { img: "images/bodas/bodacuatro.png", nombre: "Mandala 1", modelo: "M-001", medidas: "20x20 cm", material: "MDF", precio: "$150", desc: "Diseño decorativo único." },
+      { img: "images/bodas/bodacinco.png", nombre: "Mandala 1", modelo: "M-001", medidas: "20x20 cm", material: "MDF", precio: "$150", desc: "Diseño decorativo único." },
+      { img: "images/bodas/bodaseis.png", nombre: "Mandala 1", modelo: "M-001", medidas: "20x20 cm", material: "MDF", precio: "$150", desc: "Diseño decorativo único." },
+      { img: "images/bodas/bodasiete.png", nombre: "Mandala 1", modelo: "M-001", medidas: "20x20 cm", material: "MDF", precio: "$150", desc: "Diseño decorativo único." },
+      { img: "images/bodas/bodaocho.png", nombre: "Mandala 1", modelo: "M-001", medidas: "20x20 cm", material: "MDF", precio: "$150", desc: "Diseño decorativo único." },
+      { img: "images/bodas/bodanueve.png", nombre: "Mandala 1", modelo: "M-001", medidas: "20x20 cm", material: "MDF", precio: "$150", desc: "Diseño decorativo único." },
+      { img: "images/bodas/bodadiez.png", nombre: "Mandala 1", modelo: "M-001", medidas: "20x20 cm", material: "MDF", precio: "$150", desc: "Diseño decorativo único." },
+      { img: "images/bodas/bodaonce.png", nombre: "Mandala 1", modelo: "M-001", medidas: "20x20 cm", material: "MDF", precio: "$150", desc: "Diseño decorativo único." },
+      { img: "images/bodas/bodadoce.png", nombre: "Mandala 1", modelo: "M-001", medidas: "20x20 cm", material: "MDF", precio: "$150", desc: "Diseño decorativo único." },
+      { img: "images/bodas/bodatrece.png", nombre: "Mandala 1", modelo: "M-001", medidas: "20x20 cm", material: "MDF", precio: "$150", desc: "Diseño decorativo único." },
+      { img: "images/bodas/bodacatorce.png", nombre: "Mandala 1", modelo: "M-001", medidas: "20x20 cm", material: "MDF", precio: "$150", desc: "Diseño decorativo único." },
+      { img: "images/bodas/bodaquince.png", nombre: "Mandala 1", modelo: "M-001", medidas: "20x20 cm", material: "MDF", precio: "$150", desc: "Diseño decorativo único." },
+      { img: "images/bodas/bodadseis.png", nombre: "Mandala 1", modelo: "M-001", medidas: "20x20 cm", material: "MDF", precio: "$150", desc: "Diseño decorativo único." },
+      { img: "images/bodas/bodadsiete.png", nombre: "Mandala 1", modelo: "M-001", medidas: "20x20 cm", material: "MDF", precio: "$150", desc: "Diseño decorativo único." },
+      { img: "images/bodas/bodadocho.png", nombre: "Mandala 1", modelo: "M-001", medidas: "20x20 cm", material: "MDF", precio: "$150", desc: "Diseño decorativo único." },
+      { img: "images/bodas/bodadnueve.png", nombre: "Mandala 1", modelo: "M-001", medidas: "20x20 cm", material: "MDF", precio: "$150", desc: "Diseño decorativo único." },
+      { img: "images/bodas/bodaveinte.png", nombre: "Mandala 1", modelo: "M-001", medidas: "20x20 cm", material: "MDF", precio: "$150", desc: "Diseño decorativo único." },
+      { img: "images/bodas/bodavuno.png", nombre: "Mandala 1", modelo: "M-001", medidas: "20x20 cm", material: "MDF", precio: "$150", desc: "Diseño decorativo único." },
+      { img: "images/bodas/bodavdos.png", nombre: "Mandala 1", modelo: "M-001", medidas: "20x20 cm", material: "MDF", precio: "$150", desc: "Diseño decorativo único." }
+    ],
+    navidad: [
+      { img: "images/navidad/navidaduno.png", nombre: "Adorno 1", modelo: "N-001", medidas: "8x8 cm", material: "Acrílico", precio: "$90", desc: "Perfecto para el árbol de Navidad." },
+      { img: "images/navidad/navidaddos.png", nombre: "Adorno 2", modelo: "N-002", medidas: "10x10 cm", material: "Acrílico", precio: "$110", desc: "Decoración festiva en acrílico." },
+      { img: "images/navidad/navidadtres.png", nombre: "Adorno 1", modelo: "N-001", medidas: "8x8 cm", material: "Acrílico", precio: "$90", desc: "Perfecto para el árbol de Navidad." },
+      { img: "images/navidad/navidadcuatro.png", nombre: "Adorno 2", modelo: "N-002", medidas: "10x10 cm", material: "Acrílico", precio: "$110", desc: "Decoración festiva en acrílico." },
+      { img: "images/navidad/navidadcinco.png", nombre: "Adorno 1", modelo: "N-001", medidas: "8x8 cm", material: "Acrílico", precio: "$90", desc: "Perfecto para el árbol de Navidad." },
+      { img: "images/navidad/navidadseis.png", nombre: "Adorno 2", modelo: "N-002", medidas: "10x10 cm", material: "Acrílico", precio: "$110", desc: "Decoración festiva en acrílico." },
+      { img: "images/navidad/navidadsiete.png", nombre: "Adorno 1", modelo: "N-001", medidas: "8x8 cm", material: "Acrílico", precio: "$90", desc: "Perfecto para el árbol de Navidad." },
+      { img: "images/navidad/navidadocho.png", nombre: "Adorno 2", modelo: "N-002", medidas: "10x10 cm", material: "Acrílico", precio: "$110", desc: "Decoración festiva en acrílico." },
+      { img: "images/navidad/navidadnueve.png", nombre: "Adorno 1", modelo: "N-001", medidas: "8x8 cm", material: "Acrílico", precio: "$90", desc: "Perfecto para el árbol de Navidad." },
+      { img: "images/navidad/navidaddiez.png", nombre: "Adorno 2", modelo: "N-002", medidas: "10x10 cm", material: "Acrílico", precio: "$110", desc: "Decoración festiva en acrílico." },
+      { img: "images/navidad/navidadonce.png", nombre: "Adorno 1", modelo: "N-001", medidas: "8x8 cm", material: "Acrílico", precio: "$90", desc: "Perfecto para el árbol de Navidad." },
+      { img: "images/navidad/navidaddoce.png", nombre: "Adorno 2", modelo: "N-002", medidas: "10x10 cm", material: "Acrílico", precio: "$110", desc: "Decoración festiva en acrílico." },
+      { img: "images/navidad/navidadtrece.png", nombre: "Adorno 1", modelo: "N-001", medidas: "8x8 cm", material: "Acrílico", precio: "$90", desc: "Perfecto para el árbol de Navidad." },
+      { img: "images/navidad/navidadcatorce.png", nombre: "Adorno 2", modelo: "N-002", medidas: "10x10 cm", material: "Acrílico", precio: "$110", desc: "Decoración festiva en acrílico." },
+      { img: "images/navidad/navidadquince.png", nombre: "Adorno 1", modelo: "N-001", medidas: "8x8 cm", material: "Acrílico", precio: "$90", desc: "Perfecto para el árbol de Navidad." },
+      { img: "images/navidad/navidaddseis.png", nombre: "Adorno 2", modelo: "N-002", medidas: "10x10 cm", material: "Acrílico", precio: "$110", desc: "Decoración festiva en acrílico." },
+      { img: "images/navidad/navidaddsiete.png", nombre: "Adorno 1", modelo: "N-001", medidas: "8x8 cm", material: "Acrílico", precio: "$90", desc: "Perfecto para el árbol de Navidad." },
+      { img: "images/navidad/navidaddocho.png", nombre: "Adorno 2", modelo: "N-002", medidas: "10x10 cm", material: "Acrílico", precio: "$110", desc: "Decoración festiva en acrílico." },
+      { img: "images/navidad/navidaddnueve.png", nombre: "Adorno 1", modelo: "N-001", medidas: "8x8 cm", material: "Acrílico", precio: "$90", desc: "Perfecto para el árbol de Navidad." },
+      { img: "images/navidad/navidadveinte.png", nombre: "Adorno 2", modelo: "N-002", medidas: "10x10 cm", material: "Acrílico", precio: "$110", desc: "Decoración festiva en acrílico." },
+      { img: "images/navidad/navidadvuno.png", nombre: "Adorno 1", modelo: "N-001", medidas: "8x8 cm", material: "Acrílico", precio: "$90", desc: "Perfecto para el árbol de Navidad." },
+      { img: "images/navidad/navidadvdos.png", nombre: "Adorno 2", modelo: "N-002", medidas: "10x10 cm", material: "Acrílico", precio: "$110", desc: "Decoración festiva en acrílico." },
+      { img: "images/navidad/navidadvtres.png", nombre: "Adorno 2", modelo: "N-002", medidas: "10x10 cm", material: "Acrílico", precio: "$110", desc: "Decoración festiva en acrílico." },
+      { img: "images/navidad/navidadvcuatro.png", nombre: "Adorno 1", modelo: "N-001", medidas: "8x8 cm", material: "Acrílico", precio: "$90", desc: "Perfecto para el árbol de Navidad." },
+      { img: "images/navidad/navidadvcinco.png", nombre: "Adorno 2", modelo: "N-002", medidas: "10x10 cm", material: "Acrílico", precio: "$110", desc: "Decoración festiva en acrílico." }
+    
+    
+    
+    
+    ]
+    // Agrega otros tipos si los necesitas
+  };
+
+  const container = document.getElementById("cardsContainer");
+  const titulo = document.getElementById("titulo");
+
+  if (productos[tipo]) {
+    titulo.textContent = "Productos de " + tipo.charAt(0).toUpperCase() + tipo.slice(1);
+
+    productos[tipo].forEach(item => {
+      const cardHTML = `
+        <div class="col-md-4">
+          <div class="card h-100">
+            <img src="${item.img}" class="card-img-top img-clickable" alt="${item.nombre}">
+            <div class="card-body text-center">
+              <h5 class="card-title">${item.nombre}</h5>
+              <p class="card-text"><span>Modelo:</span> ${item.modelo}</p>
+              <p class="card-text"><span>Medidas:</span> ${item.medidas}</p>
+              <p class="card-text"><span>Material:</span> ${item.material}</p>
+              <p class="card-text"><span>Precio:</span> ${item.precio}</p>
+              <p class="card-text">${item.desc}</p>
+            </div>
+          </div>
+        </div>`;
+      container.innerHTML += cardHTML;
+    });
+
+    // Agregar evento a las imágenes para mostrar en grande
+    document.querySelectorAll(".img-clickable").forEach(img => {
+      img.addEventListener("click", function() {
+        const modalImage = document.getElementById("modalImage");
+        modalImage.src = this.src;
+        const myModal = new bootstrap.Modal(document.getElementById('imageModal'));
+        myModal.show();
+      });
+    });
+
+  } else {
+    titulo.textContent = "No hay productos disponibles";
+  }
+</script>
+
+</body>
+</html>
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+   
