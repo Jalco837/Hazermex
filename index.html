@@ -177,6 +177,221 @@
       color: #333
       
     }
+
+      #servicios h2 {
+    font-size: 2.5rem;
+    color: #0d6efd;
+    position: relative;
+  }
+
+  #servicios h2::after {
+    content: "";
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #0d6efd, #6610f2);
+    display: block;
+    margin: 10px auto 0;
+    border-radius: 2px;
+  }
+
+  .service-card {
+    transition: all 0.4s ease;
+    cursor: pointer;
+  }
+
+  .service-card:hover {
+    transform: translateY(-10px);
+    background: linear-gradient(135deg, #f8f9fa, #ffffff);
+  }
+  #materiales h2 {
+    font-size: 2.3rem;
+    color: #0d6efd;
+    position: relative;
+  }
+
+  #materiales h2::after {
+    content: "";
+    width: 90px;
+    height: 4px;
+    background: linear-gradient(90deg, #0d6efd, #6610f2);
+    display: block;
+    margin: 10px auto 0;
+    border-radius: 2px;
+  }
+
+  .material-card {
+    transition: all 0.4s ease;
+    cursor: pointer;
+  }
+
+  .material-card:hover {
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  }
+
+  .material-card i {
+    transition: transform 0.4s ease, color 0.4s ease;
+  }
+
+  .material-card:hover i {
+    transform: rotate(10deg) scale(1.2);
+    color: #6610f2;
+  }
+  #proceso {
+  background: linear-gradient(135deg, #f9f9f9, #eef2f7);
+}
+
+.proceso-card {
+  border: none;
+  border-radius: 15px;
+  padding: 20px;
+  background: white;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  transition: all 0.3s ease-in-out;
+}
+
+.proceso-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  background: linear-gradient(135deg, #ffffff, #f8faff);
+}
+
+.icono-proceso {
+  transition: transform 0.3s ease-in-out;
+}
+
+.proceso-card:hover .icono-proceso {
+  transform: scale(1.2) rotate(5deg);
+}
+#servicios-extra {
+  background: linear-gradient(135deg, #fdfdfd, #f3f6fb);
+}
+
+.servicio-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 25px 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.servicio-card i {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #6c63ff;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.servicio-card h6 {
+  font-weight: 600;
+  margin-top: 5px;
+  color: #333;
+}
+
+.servicio-card:hover {
+  transform: translateY(-10px);
+  background: linear-gradient(135deg, #ffffff, #eef2ff);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+.servicio-card:hover i {
+  transform: scale(1.2) rotate(-5deg);
+  color: #ff6b6b; /* cambia de color al hover */
+}
+#testimonios {
+  background: linear-gradient(135deg, #f8faff, #eef2f7);
+}
+
+.testimonial-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 25px 20px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.testimonial-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 4px solid #6c63ff;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.testimonial-text {
+  font-style: italic;
+  color: #555;
+  font-size: 0.95rem;
+  margin-bottom: 15px;
+}
+
+.testimonial-name {
+  color: #333;
+  font-weight: 600;
+}
+#cotizacion {
+  background: linear-gradient(135deg, #f8faff, #eef2f7);
+}
+
+.cotizacion-card {
+  background: #fff;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  max-width: 800px;
+}
+
+.input-group-text {
+  background: #6c63ff;
+  color: #fff;
+  border: none;
+  border-radius: 12px 0 0 12px;
+}
+
+.form-control {
+  border-radius: 0 12px 12px 0;
+  border: 1px solid #ddd;
+  transition: all 0.3s ease-in-out;
+}
+
+.form-control:focus {
+  border-color: #6c63ff;
+  box-shadow: 0 0 8px rgba(108,99,255,0.3);
+}
+
+textarea.form-control {
+  border-radius: 0 12px 12px 0 !important;
+}
+
+.btn-cotizacion {
+  background: linear-gradient(135deg, #6c63ff, #4e4ccf);
+  border: none;
+  border-radius: 30px;
+  padding: 12px 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-cotizacion:hover {
+  background: linear-gradient(135deg, #4e4ccf, #6c63ff);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(108,99,255,0.4);
+}
+
+
+
+  
   </style>
 </head>
 <body>
@@ -225,247 +440,440 @@
     </div>
   </section>
 
-  <!-- Servicios -->
-  <section id="servicios" class="py-5 container text-center">
-    <h2 data-aos="fade-up">Nuestros Servicios</h2>
-    <div class="row g-4 mt-4">
-      <div class="col-md-4" data-aos="zoom-in">
-        <div class="icon-box">
-          <i class="fa-solid fa-laser"></i>
-          <h5>Corte y Grabados</h5>
-          <h4>Laser y Router CNC</h4>
-          <p>Piezas personalizadas con cortes de precisión en múltiples materiales.</p>
-        </div>
-      </div>
-      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
-        <div class="icon-box">
-          <i class="fa-solid fa-cube"></i>
-          <h5>Impresión 3D</h5>
-          <p>Modelos de alta resolución con materiales resistentes y duraderos.</p>
-        </div>
-      </div>
-      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="400">
-        <div class="icon-box">
-          <i class="fa-solid fa-cart-shopping"></i>
-          <h5>Ventas en Línea</h5>
-          <p>Compra fácilmente a través de nuestras redes sociales y tienda virtual.</p>
-        </div>
+  
+ <!-- Servicios -->
+<section id="servicios" class="py-5 container text-center">
+  <h2 class="fw-bold mb-5" data-aos="fade-up">✨ Nuestros Servicios ✨</h2>
+  <div class="row g-4 mt-4">
+    
+   <!-- Servicio 1: Corte y Grabados -->
+    <div class="col-md-4" data-aos="zoom-in">
+      <div class="icon-box p-4 shadow-lg rounded-4 h-100 bg-white service-card">
+        <i class="fa-solid fa-scissors fa-3x text-primary mb-3"></i>
+        <h5 class="fw-bold text-primary">Corte y Grabados</h5>
+        <p class="text-muted">Piezas personalizadas con cortes de precisión en múltiples materiales.</p>
       </div>
     </div>
-  </section>
 
+    <!-- Servicio 2: Impresión 3D -->
+    <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+      <div class="icon-box p-4 shadow-lg rounded-4 h-100 bg-white service-card">
+        <i class="fa-solid fa-cube fa-3x text-primary mb-3"></i>
+        <h5 class="fw-bold">Impresión 3D</h5>
+        <p class="text-muted">Modelos de alta resolución con materiales resistentes y duraderos.</p>
+      </div>
+    </div>
 
-  <!-- Materiales de Fabricación -->
-<section id="materiales" class="py-5 text-center bg-white">
+    <!-- Servicio 3: Ventas en Línea -->
+    <div class="col-md-4" data-aos="zoom-in" data-aos-delay="400">
+      <div class="icon-box p-4 shadow-lg rounded-4 h-100 bg-white service-card">
+        <i class="fa-solid fa-cart-shopping fa-3x text-primary mb-3"></i>
+        <h5 class="fw-bold">Ventas en Línea</h5>
+        <p class="text-muted">Compra fácilmente a través de nuestras redes sociales y tienda virtual.</p>
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+<!-- Materiales de Fabricación -->
+<section id="materiales" class="py-5 text-center bg-light">
   <div class="container">
-    <h2 data-aos="fade-up">Materiales de Fabricación</h2>
-    <p class="mb-4" data-aos="fade-up" data-aos-delay="100">
+    <h2 class="fw-bold mb-3" data-aos="fade-up">🛠️ Materiales de Fabricación 🛠️ </h2>
+    <p class="mb-5 text-muted" data-aos="fade-up" data-aos-delay="100">
       Trabajamos con una amplia variedad de materiales para adaptarnos a tus necesidades.
     </p>
+
     <div class="row g-4 justify-content-center">
-      
+
       <div class="col-6 col-md-3 col-lg-2" data-aos="zoom-in">
-        <i class="fa-solid fa-tree fa-2x mb-2 text-success"></i>
-        <h6>Madera</h6>
+        <div class="material-card shadow-sm p-3 rounded bg-white">
+          <i class="fa-solid fa-tree fa-2x mb-2 text-success"></i>
+          <h6 class="fw-semibold">Madera</h6>
+        </div>
       </div>
 
       <div class="col-6 col-md-3 col-lg-2" data-aos="zoom-in" data-aos-delay="100">
-        <i class="fa-solid fa-layer-group fa-2x mb-2 text-secondary"></i>
-        <h6>MDF</h6>
+        <div class="material-card shadow-sm p-3 rounded bg-white">
+          <i class="fa-solid fa-layer-group fa-2x mb-2 text-secondary"></i>
+          <h6 class="fw-semibold">MDF</h6>
+        </div>
       </div>
 
       <div class="col-6 col-md-3 col-lg-2" data-aos="zoom-in" data-aos-delay="200">
-        <i class="fa-regular fa-square fa-2x mb-2 text-info"></i>
-        <h6>Acrílico</h6>
+        <div class="material-card shadow-sm p-3 rounded bg-white">
+          <i class="fa-regular fa-square fa-2x mb-2 text-info"></i>
+          <h6 class="fw-semibold">Acrílico</h6>
+        </div>
       </div>
 
       <div class="col-6 col-md-3 col-lg-2" data-aos="zoom-in" data-aos-delay="300">
-        <i class="fa-solid fa-bottle-water fa-2x mb-2 text-primary"></i>
-        <h6>Plásticos</h6>
+        <div class="material-card shadow-sm p-3 rounded bg-white">
+          <i class="fa-solid fa-bottle-water fa-2x mb-2 text-primary"></i>
+          <h6 class="fw-semibold">Plásticos</h6>
+        </div>
       </div>
 
       <div class="col-6 col-md-3 col-lg-2" data-aos="zoom-in" data-aos-delay="400">
-        <i class="fa-solid fa-ruler fa-2x mb-2 text-warning"></i>
-        <h6>Vinil</h6>
+        <div class="material-card shadow-sm p-3 rounded bg-white">
+          <i class="fa-solid fa-ruler fa-2x mb-2 text-warning"></i>
+          <h6 class="fw-semibold">Vinil</h6>
+        </div>
       </div>
 
       <div class="col-6 col-md-3 col-lg-2" data-aos="zoom-in" data-aos-delay="500">
-        <i class="fa-solid fa-industry fa-2x mb-2 text-dark"></i>
-        <h6>Metales Ferrosos</h6>
+        <div class="material-card shadow-sm p-3 rounded bg-white">
+          <i class="fa-solid fa-industry fa-2x mb-2 text-dark"></i>
+          <h6 class="fw-semibold">Metales Ferrosos</h6>
+        </div>
       </div>
 
       <div class="col-6 col-md-3 col-lg-2" data-aos="zoom-in" data-aos-delay="600">
-        <i class="fa-solid fa-clone fa-2x mb-2 text-secondary"></i>
-        <h6>Policarbonato</h6>
+        <div class="material-card shadow-sm p-3 rounded bg-white">
+          <i class="fa-solid fa-clone fa-2x mb-2 text-secondary"></i>
+          <h6 class="fw-semibold">Policarbonato</h6>
+        </div>
       </div>
 
       <div class="col-6 col-md-3 col-lg-2" data-aos="zoom-in" data-aos-delay="700">
-        <i class="fa-solid fa-wind fa-2x mb-2 text-danger"></i>
-        <h6>Fibra de Vidrio</h6>
+        <div class="material-card shadow-sm p-3 rounded bg-white">
+          <i class="fa-solid fa-wind fa-2x mb-2 text-danger"></i>
+          <h6 class="fw-semibold">Fibra de Vidrio</h6>
+        </div>
       </div>
 
       <div class="col-6 col-md-3 col-lg-2" data-aos="zoom-in" data-aos-delay="800">
-        <i class="fa-solid fa-shirt fa-2x mb-2 text-info"></i>
-        <h6>Tela</h6>
+        <div class="material-card shadow-sm p-3 rounded bg-white">
+          <i class="fa-solid fa-shirt fa-2x mb-2 text-info"></i>
+          <h6 class="fw-semibold">Tela</h6>
+        </div>
       </div>
 
       <div class="col-6 col-md-3 col-lg-2" data-aos="zoom-in" data-aos-delay="900">
-        <i class="fa-solid fa-scroll fa-2x mb-2 text-muted"></i>
-        <h6>Papel</h6>
+        <div class="material-card shadow-sm p-3 rounded bg-white">
+          <i class="fa-solid fa-scroll fa-2x mb-2 text-muted"></i>
+          <h6 class="fw-semibold">Papel</h6>
+        </div>
       </div>
 
       <div class="col-6 col-md-3 col-lg-2" data-aos="zoom-in" data-aos-delay="1000">
-        <i class="fa-solid fa-box fa-2x mb-2 text-brown"></i>
-        <h6>Cartón</h6>
+        <div class="material-card shadow-sm p-3 rounded bg-white">
+          <i class="fa-solid fa-box fa-2x mb-2 text-brown"></i>
+          <h6 class="fw-semibold">Cartón</h6>
+        </div>
       </div>
 
       <div class="col-6 col-md-3 col-lg-2" data-aos="zoom-in" data-aos-delay="1100">
-        <i class="fa-solid fa-gears fa-2x mb-2 text-secondary"></i>
-        <h6>Acero Inoxidable</h6>
+        <div class="material-card shadow-sm p-3 rounded bg-white">
+          <i class="fa-solid fa-gears fa-2x mb-2 text-secondary"></i>
+          <h6 class="fw-semibold">Acero Inoxidable</h6>
+        </div>
       </div>
 
       <div class="col-6 col-md-3 col-lg-2" data-aos="zoom-in" data-aos-delay="1200">
-        <i class="fa-regular fa-gem fa-2x mb-2 text-primary"></i>
-        <h6>Cristal</h6>
+        <div class="material-card shadow-sm p-3 rounded bg-white">
+          <i class="fa-regular fa-gem fa-2x mb-2 text-primary"></i>
+          <h6 class="fw-semibold">Cristal</h6>
+        </div>
       </div>
 
       <div class="col-6 col-md-3 col-lg-2" data-aos="zoom-in" data-aos-delay="1300">
-        <i class="fa-solid fa-mountain fa-2x mb-2 text-dark"></i>
-        <h6>Piedra</h6>
+        <div class="material-card shadow-sm p-3 rounded bg-white">
+          <i class="fa-solid fa-mountain fa-2x mb-2 text-dark"></i>
+          <h6 class="fw-semibold">Piedra</h6>
+        </div>
       </div>
 
       <div class="col-6 col-md-3 col-lg-2" data-aos="zoom-in" data-aos-delay="1400">
-        <i class="fa-solid fa-couch fa-2x mb-2 text-warning"></i>
-        <h6>Cuero</h6>
+        <div class="material-card shadow-sm p-3 rounded bg-white">
+          <i class="fa-solid fa-couch fa-2x mb-2 text-warning"></i>
+          <h6 class="fw-semibold">Cuero</h6>
+        </div>
       </div>
+
+     
 
     </div>
   </div>
 </section>
-
 <!-- Nuestros Diseños -->
 <section id="disenos" class="py-5 bg-light text-center">
   <div class="container">
-    <h2 data-aos="fade-up">Nuestros Diseños</h2>
-    <p class="mb-4" data-aos="fade-up" data-aos-delay="100">
+    <h2 class="fw-bold mb-3" data-aos="fade-up">✨ Nuestros Diseños ✨</h2>
+    <p class="mb-4 text-muted" data-aos="fade-up" data-aos-delay="100">
       Explora algunos de nuestros diseños personalizados según la ocasión.
     </p>
 
     <!-- Botones de categorías -->
-    <ul class="nav nav-pills justify-content-center mb-4" id="designTabs" role="tablist">
+    <ul class="nav nav-pills justify-content-center mb-5 gap-2" id="designTabs" role="tablist">
       <li class="nav-item" role="presentation">
-        <button class="nav-link active" id="bodas-tab" data-bs-toggle="pill" data-bs-target="#bodas" type="button" role="tab" aria-controls="bodas" aria-selected="true">
-          Bodas
+        <button class="nav-link active shadow-sm" id="bodas-tab" data-bs-toggle="pill" data-bs-target="#bodas" type="button" role="tab" aria-controls="bodas" aria-selected="true">
+          💍 Bodas
         </button>
       </li>
       <li class="nav-item" role="presentation">
-        <button class="nav-link" id="navidad-tab" data-bs-toggle="pill" data-bs-target="#navidad" type="button" role="tab" aria-controls="navidad" aria-selected="false">
-          Navidad
+        <button class="nav-link shadow-sm" id="navidad-tab" data-bs-toggle="pill" data-bs-target="#navidad" type="button" role="tab" aria-controls="navidad" aria-selected="false">
+          🎄 Navidad
         </button>
       </li>
       <li class="nav-item" role="presentation">
-        <button class="nav-link" id="muebles-tab" data-bs-toggle="pill" data-bs-target="#muebles" type="button" role="tab" aria-controls="muebles" aria-selected="false">
-          Muebles
+        <button class="nav-link shadow-sm" id="muebles-tab" data-bs-toggle="pill" data-bs-target="#muebles" type="button" role="tab" aria-controls="muebles" aria-selected="false">
+          🪑 Muebles
         </button>
       </li>
-
-       <li class="nav-item" role="presentation">
-  <button class="nav-link" id="extras-tab" data-bs-toggle="pill" data-bs-target="#extras" type="button" role="tab" aria-controls="extras" aria-selected="false">
-    Extras
-  </button>
-</li>
-
+      <li class="nav-item" role="presentation">
+        <button class="nav-link shadow-sm" id="extras-tab" data-bs-toggle="pill" data-bs-target="#extras" type="button" role="tab" aria-controls="extras" aria-selected="false">
+          ⭐ Extras
+        </button>
+      </li>
     </ul>
 
     <!-- Contenido de pestañas -->
 <div class="tab-content" id="designTabsContent">
   <!-- Bodas -->
-  <div class="tab-pane fade show active" id="bodas" role="tabpanel" aria-labelledby="bodas-tab">
-    <div class="row g-4">
-      <div class="col-md-4"><div class="card p-3">Decoración de pared</div></div>
-      <div class="col-md-4"><div class="card p-3">Letreros</div></div>
-      <div class="col-md-4"><div class="card p-3">Servilleteros</div></div>
-      <div class="col-md-4"><div class="card p-3">Centros de mesa</div></div>
-      <div class="col-md-4"><div class="card p-3">Recuerdos</div></div>
-      <div class="col-md-4"><div class="card p-3">Porta retratos</div></div>
-      <div class="col-md-4"><div class="card p-3">Llaveros</div></div>
+<div class="tab-pane fade show active" id="bodas" role="tabpanel" aria-labelledby="bodas-tab">
+  <div class="row g-4">
+    <div class="col-md-4">
+      <div class="card design-card p-3 text-center shadow-sm border-0">
+        <i class="fa-solid fa-image fa-2x mb-2 text-danger"></i>
+        <h6>Decoración de pared</h6>
+      </div>
     </div>
-  </div>
-
-  <!-- Navidad -->
-  <div class="tab-pane fade" id="navidad" role="tabpanel" aria-labelledby="navidad-tab">
-    <div class="row g-4">
-      <div class="col-md-4"><div class="card p-3">Decoración de pared</div></div>
-      <div class="col-md-4"><div class="card p-3">Esferas</div></div>
-      <div class="col-md-4"><div class="card p-3">Nacimientos</div></div>
+    <div class="col-md-4">
+      <div class="card design-card p-3 text-center shadow-sm border-0">
+        <i class="fa-solid fa-sign-hanging fa-2x mb-2 text-primary"></i>
+        <h6>Letreros</h6>
+      </div>
     </div>
-  </div>
-
-  <!-- Muebles -->
-  <div class="tab-pane fade" id="muebles" role="tabpanel" aria-labelledby="muebles-tab">
-    <div class="row g-4">
-      <div class="col-md-4"><div class="card p-3">Mesas</div></div>
-      <div class="col-md-4"><div class="card p-3">Sillas</div></div>
-      <div class="col-md-4"><div class="card p-3">Biombos</div></div>
-      <div class="col-md-4"><div class="card p-3">Estanterías</div></div>
-      <div class="col-md-4"><div class="card p-3">Cajas de almacenamiento</div></div>
-      <div class="col-md-4"><div class="card p-3">Casas de juguete o mascotas</div></div>
-      <div class="col-md-4"><div class="card p-3">Lámparas</div></div>
-      <div class="col-md-4"><div class="card p-3">Recubrimiento de focos</div></div>
-      <div class="col-md-4"><div class="card p-3">Lámparas de noche</div></div>
-      <div class="col-md-4"><div class="card p-3">Lámparas de mesa</div></div>
+    <div class="col-md-4">
+      <div class="card design-card p-3 text-center shadow-sm border-0">
+        <i class="fa-solid fa-utensils fa-2x mb-2 text-success"></i>
+        <h6>Servilleteros</h6>
+      </div>
     </div>
+    <div class="col-md-4">
+      <div class="card design-card p-3 text-center shadow-sm border-0">
+        <i class="fa-solid fa-table-cells fa-2x mb-2 text-warning"></i>
+        <h6>Centros de mesa</h6>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card design-card p-3 text-center shadow-sm border-0">
+        <i class="fa-solid fa-gift fa-2x mb-2 text-info"></i>
+        <h6>Recuerdos</h6>
+      </div>
+    </div>
+   <div class="col-md-4">
+  <div class="card design-card p-3 text-center shadow-sm border-0">
+    <i class="fa-solid fa-image fa-2x mb-2 text-secondary"></i>
+    <h6>Porta retratos</h6>
   </div>
+</div>
 
-  <!-- Extras -->
-  <div class="tab-pane fade" id="extras" role="tabpanel" aria-labelledby="extras-tab">
-    <div class="row g-4">
-      <div class="col-md-4"><div class="card p-3">Decoraciones</div></div>
-      <div class="col-md-4"><div class="card p-3">Material didáctico</div></div>
+    <div class="col-md-4">
+      <div class="card design-card p-3 text-center shadow-sm border-0">
+        <i class="fa-solid fa-key fa-2x mb-2 text-danger"></i>
+        <h6>Llaveros</h6>
+      </div>
     </div>
   </div>
 </div>
 
+<!-- Navidad -->
+<div class="tab-pane fade" id="navidad" role="tabpanel" aria-labelledby="navidad-tab">
+  <div class="row g-4">
+    <div class="col-md-4">
+      <div class="card design-card p-3 text-center shadow-sm border-0">
+        <i class="fa-solid fa-image fa-2x mb-2 text-danger"></i>
+        <h6>Decoración de pared</h6>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card design-card p-3 text-center shadow-sm border-0">
+        <i class="fa-solid fa-snowflake fa-2x mb-2 text-primary"></i>
+        <h6>Esferas</h6>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card design-card p-3 text-center shadow-sm border-0">
+        <i class="fa-solid fa-baby fa-2x mb-2 text-success"></i>
+        <h6>Nacimientos</h6>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Muebles -->
+<div class="tab-pane fade" id="muebles" role="tabpanel" aria-labelledby="muebles-tab">
+  <div class="row g-4">
+    <div class="col-md-4">
+      <div class="card design-card p-3 text-center shadow-sm border-0">
+        <i class="fa-solid fa-table fa-2x mb-2 text-warning"></i>
+        <h6>Mesas</h6>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card design-card p-3 text-center shadow-sm border-0">
+        <i class="fa-solid fa-chair fa-2x mb-2 text-primary"></i>
+        <h6>Sillas</h6>
+      </div>
+    </div>
+    <div class="col-md-4">
+  <div class="card design-card p-3 text-center shadow-sm border-0">
+    <i class="fa-solid fa-columns fa-2x mb-2 text-secondary"></i>
+    <h6>Biombos</h6>
+  </div>
+</div>
+    <div class="col-md-4">
+      <div class="card design-card p-3 text-center shadow-sm border-0">
+        <i class="fa-solid fa-warehouse fa-2x mb-2 text-info"></i>
+        <h6>Estanterías</h6>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card design-card p-3 text-center shadow-sm border-0">
+        <i class="fa-solid fa-boxes-stacked fa-2x mb-2 text-warning"></i>
+        <h6>Cajas de almacenamiento</h6>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card design-card p-3 text-center shadow-sm border-0">
+        <i class="fa-solid fa-house-chimney fa-2x mb-2 text-danger"></i>
+        <h6>Casas de juguete o mascotas</h6>
+      </div>
+    </div>
+    <div class="col-md-4">
+  <div class="card design-card p-3 text-center shadow-sm border-0">
+    <i class="fa-solid fa-lightbulb fa-2x mb-2 text-primary"></i>
+    <h6>Lámparas</h6>
+  </div>
+</div>
+<div class="col-md-4">
+  <div class="card design-card p-3 text-center shadow-sm border-0">
+    <i class="fa-solid fa-shield-halved fa-2x mb-2 text-warning"></i>
+    <h6>Recubrimiento de focos</h6>
+  </div>
+</div>
+
+<div class="col-md-4">
+  <div class="card design-card p-3 text-center shadow-sm border-0">
+    <i class="fa-solid fa-moon fa-2x mb-2 text-secondary"></i>
+    <h6>Lámparas de noche</h6>
+  </div>
+</div>
+<div class="col-md-4">
+  <div class="card design-card p-3 text-center shadow-sm border-0">
+    <i class="fa-solid fa-lightbulb fa-2x mb-2 text-info"></i>
+    <h6>Lámparas de mesa</h6>
+  </div>
+</div>
+
+<div class="col-md-4">
+  <div class="card design-card p-3 text-center shadow-sm border-0">
+    <i class="fa-solid fa-gift fa-2x mb-2 text-danger"></i>
+    <h6>Adornos de festividades</h6>
+  </div>
+</div>
+
+<div class="col-md-4">
+  <div class="card design-card p-3 text-center shadow-sm border-0">
+    <i class="fa-solid fa-landmark fa-2x mb-2 text-warning"></i>
+    <h6>Esculturas</h6>
+  </div>
+</div>
+
+<div class="col-md-4">
+  <div class="card design-card p-3 text-center shadow-sm border-0">
+    <i class="fa-solid fa-cake-candles fa-2x mb-2 text-success"></i>
+    <h6>Recuerdos de fiesta</h6>
+  </div>
+</div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Extras -->
+<div class="tab-pane fade" id="extras" role="tabpanel" aria-labelledby="extras-tab">
+  <div class="row g-4">
+    <div class="col-md-4">
+      <div class="card design-card p-3 text-center shadow-sm border-0">
+        <i class="fa-solid fa-star fa-2x mb-2 text-danger"></i>
+        <h6>Decoraciones</h6>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card design-card p-3 text-center shadow-sm border-0">
+        <i class="fa-solid fa-book fa-2x mb-2 text-info"></i>
+        <h6>Material didáctico</h6>
+      </div>
+    </div>
+    <div class="col-md-4">
+  <div class="card design-card p-3 text-center shadow-sm border-0">
+    <i class="fa-solid fa-puzzle-piece fa-2x mb-2 text-primary"></i>
+    <h6>Rompecabezas</h6>
+  </div>
+</div>
+
+<!-- Esquemas -->
+<div class="col-md-4">
+  <div class="card design-card p-3 text-center shadow-sm border-0">
+    <i class="fa-solid fa-diagram-project fa-2x mb-2 text-warning"></i>
+    <h6>Esquemas</h6>
+  </div>
+</div>
+
+<!-- Sellos -->
+<div class="col-md-4">
+  <div class="card design-card p-3 text-center shadow-sm border-0">
+    <i class="fa-solid fa-stamp fa-2x mb-2 text-success"></i>
+    <h6>Sellos</h6>
+  </div>
+</div>
+  </div>
+</div>
+
 <!-- Servicios Extra -->
-<section id="servicios-extra" class="py-5 bg-white text-center">
+<section id="servicios-extra" class="py-5 text-center">
   <div class="container">
-    <h2 data-aos="fade-up">Servicios Extra</h2>
-    <p class="mb-4" data-aos="fade-up" data-aos-delay="100">
+    <h2 class="fw-bold mb-3" data-aos="fade-up">Servicios Extra</h2>
+    <p class="mb-5 text-muted" data-aos="fade-up" data-aos-delay="100">
       Complementa tus proyectos con nuestros servicios adicionales de acabado.
     </p>
 
     <div class="row g-4 justify-content-center">
+      <!-- Servicio -->
       <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in">
-        <div class="card p-3">
-          <i class="fa-solid fa-paint-roller fa-2x mb-2 text-primary"></i>
+        <div class="servicio-card">
+          <i class="fa-solid fa-paint-roller"></i>
           <h6>Pintado</h6>
         </div>
       </div>
 
       <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="100">
-        <div class="card p-3">
-          <i class="fa-solid fa-spray-can fa-2x mb-2 text-warning"></i>
+        <div class="servicio-card">
+          <i class="fa-solid fa-spray-can"></i>
           <h6>Esmaltado</h6>
         </div>
       </div>
 
       <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="200">
-        <div class="card p-3">
-          <i class="fa-solid fa-cube fa-2x mb-2 text-danger"></i>
+        <div class="servicio-card">
+          <i class="fa-solid fa-cube"></i>
           <h6>Resina</h6>
         </div>
       </div>
 
       <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="300">
-        <div class="card p-3">
-          <i class="fa-solid fa-print fa-2x mb-2 text-success"></i>
+        <div class="servicio-card">
+          <i class="fa-solid fa-print"></i>
           <h6>Serigrafía</h6>
         </div>
       </div>
 
       <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="400">
-        <div class="card p-3">
-          <i class="fa-solid fa-stamp fa-2x mb-2 text-info"></i>
+        <div class="servicio-card">
+          <i class="fa-solid fa-stamp"></i>
           <h6>Vinil Estampado</h6>
         </div>
       </div>
@@ -483,78 +891,108 @@
 
 
 
-  <!-- Proceso -->
+ <!-- Proceso -->
 <section id="proceso" class="py-5 bg-light text-center">
   <div class="container">
-    <h2 data-aos="fade-up">Nuestro Proceso</h2>
-    <div class="row g-4 mt-4 justify-content-center">
+    <h2 class="fw-bold mb-5" data-aos="fade-up">✨ Nuestro Proceso ✨</h2>
+    <div class="row g-4 justify-content-center">
       
       <!-- Paso 1 -->
-      <div class="col-md step" data-aos="fade-up">
-        <img src="https://img.icons8.com/fluency/96/idea.png" alt="Idea" class="mb-3" width="80">
-        <h6>1. Idea</h6>
-        <p>Escuchamos tu propuesta o diseño.</p>
+      <div class="col-md-2 col-sm-6 step" data-aos="fade-up">
+        <div class="card proceso-card h-100">
+          <div class="card-body">
+            <img src="https://img.icons8.com/fluency/96/idea.png" alt="Idea" class="mb-3 icono-proceso">
+            <h6 class="fw-bold">1. Idea</h6>
+            <p class="small">Escuchamos tu propuesta o diseño.</p>
+          </div>
+        </div>
       </div>
-      
+
       <!-- Paso 2 -->
-      <div class="col-md step" data-aos="fade-up" data-aos-delay="200">
-        <img src="https://img.icons8.com/fluency/96/design.png" alt="Diseño" class="mb-3" width="80">
-        <h6>2. Diseño</h6>
-        <p>Aparta tu diseño con el 50% del valor del pedido.</p>
+      <div class="col-md-2 col-sm-6 step" data-aos="fade-up" data-aos-delay="200">
+        <div class="card proceso-card h-100">
+          <div class="card-body">
+            <img src="https://img.icons8.com/fluency/96/design.png" alt="Diseño" class="mb-3 icono-proceso">
+            <h6 class="fw-bold">2. Diseño</h6>
+            <p class="small">Aparta tu diseño con el 50% del valor del pedido.</p>
+          </div>
+        </div>
       </div>
-      
+
       <!-- Paso 3 -->
-      <div class="col-md step" data-aos="fade-up" data-aos-delay="400">
-        <img src="https://img.icons8.com/fluency/96/3d-printer.png" alt="Producción" class="mb-3" width="80">
-        <h6>3. Producción</h6>
-        <p>Fabricamos tu diseño.</p>
+      <div class="col-md-2 col-sm-6 step" data-aos="fade-up" data-aos-delay="400">
+        <div class="card proceso-card h-100">
+          <div class="card-body">
+            <img src="https://img.icons8.com/fluency/96/3d-printer.png" alt="Producción" class="mb-3 icono-proceso">
+            <h6 class="fw-bold">3. Producción</h6>
+            <p class="small">Fabricamos tu diseño.</p>
+          </div>
+        </div>
       </div>
-      
+
       <!-- Paso 4 -->
-      <div class="col-md step" data-aos="fade-up" data-aos-delay="600">
-        <img src="https://img.icons8.com/fluency/96/cash-in-hand.png" alt="Liquidación" class="mb-3" width="80">
-        <h6>4. Liquidación del producto</h6>
-        <p>Espera el día de tu entrega.</p>
+      <div class="col-md-2 col-sm-6 step" data-aos="fade-up" data-aos-delay="600">
+        <div class="card proceso-card h-100">
+          <div class="card-body">
+            <img src="https://img.icons8.com/fluency/96/cash-in-hand.png" alt="Liquidación" class="mb-3 icono-proceso">
+            <h6 class="fw-bold">4. Liquidación</h6>
+            <p class="small">Espera el día de tu entrega.</p>
+          </div>
+        </div>
       </div>
-      
+
       <!-- Paso 5 -->
-      <div class="col-md step" data-aos="fade-up" data-aos-delay="800">
-        <img src="https://img.icons8.com/fluency/96/delivery.png" alt="Entrega" class="mb-3" width="80">
-        <h6>5. Entrega</h6>
-        <p>Recibe tu producto terminado con calidad garantizada.</p>
+      <div class="col-md-2 col-sm-6 step" data-aos="fade-up" data-aos-delay="800">
+        <div class="card proceso-card h-100">
+          <div class="card-body">
+            <img src="https://img.icons8.com/fluency/96/delivery.png" alt="Entrega" class="mb-3 icono-proceso">
+            <h6 class="fw-bold">5. Entrega</h6>
+            <p class="small">Recibe tu producto terminado con calidad garantizada.</p>
+          </div>
+        </div>
       </div>
 
     </div>
   </div>
 </section>
 
+
   <!-- Testimonios -->
-  <section id="testimonios" class="py-5 container text-center">
-    <h2 data-aos="fade-up">Lo que Dicen Nuestros Clientes</h2>
-    <div class="row g-4 mt-4">
+<section id="testimonios" class="py-5">
+  <div class="container text-center">
+    <h2 class="fw-bold mb-5" data-aos="fade-up">💬 Lo que Dicen Nuestros Clientes 💬 </h2>
+    <div class="row g-4 mt-4 justify-content-center">
+      
+      <!-- Testimonio 1 -->
       <div class="col-md-4" data-aos="flip-left">
-        <div class="testimonial">
-          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Cliente 1">
-          <p>"Increíble calidad y rapidez. Mis piezas quedaron perfectas."</p>
-          <strong>- Laura G.</strong>
+        <div class="testimonial-card">
+          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Cliente 1" class="testimonial-img">
+          <p class="testimonial-text">"Increíble calidad y rapidez. Mis piezas quedaron perfectas."</p>
+          <strong class="testimonial-name">- Laura G.</strong>
         </div>
       </div>
+
+      <!-- Testimonio 2 -->
       <div class="col-md-4" data-aos="flip-left" data-aos-delay="200">
-        <div class="testimonial">
-          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Cliente 2">
-          <p>"La mejor opción para impresión 3D, atención personalizada."</p>
-          <strong>- Carlos R.</strong>
+        <div class="testimonial-card">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Cliente 2" class="testimonial-img">
+          <p class="testimonial-text">"La mejor opción para impresión 3D, atención personalizada."</p>
+          <strong class="testimonial-name">- Carlos R.</strong>
         </div>
       </div>
+
+      <!-- Testimonio 3 -->
       <div class="col-md-4" data-aos="flip-left" data-aos-delay="400">
-        <div class="testimonial">
-          <img src="https://randomuser.me/api/portraits/men/77.jpg" alt="Cliente 3">
-          <p>"Gracias al taller pude materializar mis proyectos de diseño."</p>
-          <strong>- Andrés T.</strong>
+        <div class="testimonial-card">
+          <img src="https://randomuser.me/api/portraits/men/77.jpg" alt="Cliente 3" class="testimonial-img">
+          <p class="testimonial-text">"Gracias al taller pude materializar mis proyectos de diseño."</p>
+          <strong class="testimonial-name">- Andrés T.</strong>
         </div>
       </div>
+
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- FAQ -->
   <section id="faq" class="py-5 bg-light">
@@ -602,38 +1040,60 @@
   </section>
 
   <!-- Cotización -->
-<section id="cotizacion" class="container py-5">
-  <h2 class="text-center" data-aos="fade-up">Cotización</h2>
-  <form id="cotizacionForm" class="row g-3 mt-4" data-aos="fade-up" data-aos-delay="200">
-    <!-- Nombre -->
-    <div class="col-md-6">
-      <input type="text" id="nombre" class="form-control" placeholder="Tu nombre" required>
+<section id="cotizacion" class="py-5">
+  <div class="container">
+    <h2 class="text-center fw-bold mb-4" data-aos="fade-up">📝 Cotización</h2>
+    <div class="cotizacion-card mx-auto" data-aos="fade-up" data-aos-delay="200">
+      <form id="cotizacionForm" class="row g-3">
+        
+        <!-- Nombre -->
+        <div class="col-md-6">
+          <div class="input-group">
+            <span class="input-group-text"><i class="fa-solid fa-user"></i></span>
+            <input type="text" id="nombre" class="form-control" placeholder="Tu nombre" required>
+          </div>
+        </div>
+
+        <!-- Correo -->
+        <div class="col-md-6">
+          <div class="input-group">
+            <span class="input-group-text"><i class="fa-solid fa-envelope"></i></span>
+            <input type="email" id="correo" class="form-control" placeholder="Tu correo" required>
+          </div>
+        </div>
+
+        <!-- Número de celular -->
+        <div class="col-md-6">
+          <div class="input-group">
+            <span class="input-group-text"><i class="fa-solid fa-phone"></i></span>
+            <input type="tel" id="celular" class="form-control" placeholder="Tu número de celular" required>
+          </div>
+        </div>
+
+        <!-- Descripción -->
+        <div class="col-12">
+          <div class="input-group">
+            <span class="input-group-text"><i class="fa-solid fa-pen"></i></span>
+            <textarea id="descripcion" class="form-control" rows="4" placeholder="Descripción de tu proyecto" required></textarea>
+          </div>
+        </div>
+
+        <!-- Aviso -->
+        <div class="col-12">
+          <p class="text-danger fw-bold small">
+            ⚠ Importante: enviar imagen de referencia en caso de tenerla.
+          </p>
+        </div>
+
+        <!-- Botón -->
+        <div class="col-12 text-center">
+          <button type="submit" class="btn btn-lg btn-cotizacion">
+            <i class="fa-solid fa-paper-plane"></i> Enviar Cotización
+          </button>
+        </div>
+      </form>
     </div>
-    <!-- Correo -->
-    <div class="col-md-6">
-      <input type="email" id="correo" class="form-control" placeholder="Tu correo" required>
-    </div>
-    <!-- Número de celular -->
-    <div class="col-md-6">
-      <input type="tel" id="celular" class="form-control" placeholder="Tu número de celular" required>
-    </div>
-    <!-- Descripción -->
-    <div class="col-12">
-      <textarea id="descripcion" class="form-control" rows="4" placeholder="Descripción de tu proyecto" required></textarea>
-    </div>
-    <!-- Aviso -->
-    <div class="col-12">
-      <p class="text-danger fw-bold">
-        ⚠ Importante: enviar imagen de referencia en caso de tenerla.
-      </p>
-    </div>
-    <!-- Botón -->
-    <div class="col-12 text-center">
-      <button type="submit" class="btn btn-lg btn-success">
-        <i class="fa-solid fa-paper-plane"></i> Enviar Cotización
-      </button>
-    </div>
-  </form>
+  </div>
 </section>
 
 <script>
