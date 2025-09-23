@@ -11,63 +11,102 @@
   <style>
     body {
       font-family: 'Poppins', sans-serif;
-      background: #f5f7fa;
+      background: linear-gradient(180deg, #f5f7fa 0%, #eaf1f9 100%);
       color: #333;
     }
+    /* Navbar */
     .navbar {
-      transition: all 0.4s ease;
-      background: rgba(183, 196, 240, 0.9);
+      background: linear-gradient(90deg, #ff512f, #dd2476);
+      padding: 12px 0;
     }
     .navbar .nav-link {
-      font-weight: 750;
+      font-weight: 600;
       margin-left: 15px;
+      color: white !important;
+      transition: color 0.3s ease;
+    }
+    .navbar .nav-link:hover {
+      color: #ffe082 !important;
+    }
+    .navbar-brand span {
       color: white;
+      font-size: 1.3rem;
     }
 
+    /* Cards */
     .card {
       border: none;
       border-radius: 20px;
       overflow: hidden;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
+      background: white;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     .card:hover {
-      transform: translateY(-10px);
+      transform: translateY(-12px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.12);
     }
+    .card img {
+      height: 220px;
+      object-fit: cover;
+    }
+    .card-title {
+      font-weight: 700;
+      color: #333;
+    }
+    .card-text {
+      font-size: 0.95rem;
+      color: #666;
+    }
+
+    /* Botones de productos */
+    .btn {
+      border-radius: 50px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    .btn:hover {
+      transform: scale(1.05);
+    }
+
+    /* Título sección */
     section h2 {
       font-weight: 700;
       margin-bottom: 40px;
       display: inline-block;
       position: relative;
+      color: #222;
     }
     section h2::after {
       content: "";
       position: absolute;
-      width: 50%;
+      width: 60%;
       height: 4px;
       background: linear-gradient(90deg, #ff512f, #dd2476);
       bottom: -10px;
-      left: 25%;
-      border-radius: 2px;
+      left: 20%;
+      border-radius: 3px;
     }
-    
+
     /* Footer */
     footer {
       background: #0d0d0d;
       color: #bbb;
-      padding: 40px 0;
+      padding: 50px 0;
     }
     footer a {
       color: #ff512f;
-      text-decoration: none;
+      transition: color 0.3s;
+    }
+    footer a:hover {
+      color: #dd2476;
+    }
+    footer p {
+      margin: 5px 0;
+      font-size: 0.95rem;
     }
 
-    /* Logo */
-    #navbarLogo {
-      cursor: pointer;
-      transition: transform 0.3s ease;
-    }
-
+    /* Modal logo */
     .modal-fullscreen .modal-content {
       background: #ffffff;
       display: flex;
@@ -90,29 +129,29 @@
 </head>
 <body>
 
-<!-- Barra de navegación -->
-<nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg fixed-top">
   <div class="container">
     <a class="navbar-brand d-flex align-items-center" href="#">
-      <img id="navbarLogo" src="images/logotipo.png" alt="Hazermex Logo" width="60" height="60" class="me-3">
+      <img id="navbarLogo" src="images/logotipo.png" alt="Hazermex Logo" width="55" height="55" class="me-2 rounded-circle bg-white p-1">
       <span class="fw-bold">HAZERMEX</span>
     </a>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+    <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="menu">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="inicio.html">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
         <li class="nav-item"><a class="nav-link active" href="catalogo.html">Catálogo</a></li>
-        <li class="nav-item"><a class="nav-link" href="inicio.html#nosotros">Nosotros</a></li>
-        <li class="nav-item"><a class="nav-link" href="inicio.html#contacto">Contacto</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#nosotros">Nosotros</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#contacto">Contacto</a></li>
       </ul>
     </div>
   </div>
 </nav>
 
-<!-- Modal para ver el logo en pantalla completa -->
+<!-- Modal Logo -->
 <div class="modal fade" id="logoModal" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-fullscreen">
     <div class="modal-content">
@@ -122,14 +161,15 @@
   </div>
 </div>
 
-<section class="container py-5" style="margin-top:80px;">
+<!-- Catálogo -->
+<section class="container py-5" style="margin-top:90px;">
   <h2 class="text-center">Catálogo de Productos</h2>
   <div class="row g-4 justify-content-center">
 
     <!-- Producto 1 -->
     <div class="col-md-4" data-aos="fade-up">
       <div class="card h-100">
-        <img src="images/cortelaser.png" class="card-img-top" alt="Producto 1">
+        <img src="images/cortelaser.png" class="card-img-top" alt="Corte Láser">
         <div class="card-body text-center">
           <h5 class="card-title">Corte Láser</h5>
           <p class="card-text">Piezas únicas en distintos materiales.</p>
@@ -145,7 +185,7 @@
     <!-- Producto 2 -->
     <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
       <div class="card h-100">
-        <img src="images/impresion.png" class="card-img-top" alt="Producto 2">
+        <img src="images/impresion.png" class="card-img-top" alt="Impresión 3D">
         <div class="card-body text-center">
           <h5 class="card-title">Impresión 3D</h5>
           <p class="card-text">Modelos en alta resolución y calidad.</p>
@@ -161,12 +201,12 @@
     <!-- Producto 3 -->
     <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
       <div class="card h-100">
-        <img src="images/diseños.png" class="card-img-top" alt="Producto 3">
+        <img src="images/diseños.png" class="card-img-top" alt="Diseños Personalizados">
         <div class="card-body text-center">
           <h5 class="card-title">Diseños Personalizados</h5>
           <p class="card-text">Creamos justo lo que imaginas.</p>
           <div class="d-grid gap-2">
-            <button class="btn btn-outline-primary abrir-productos" data-tipo="personalizados">Diseños Personalizados</button>
+            <button class="btn btn-outline-dark abrir-productos" data-tipo="personalizados">Diseños Personalizados</button>
           </div>
         </div>
       </div>
@@ -180,21 +220,13 @@
   <div class="container">
     <p>© 2025 Taller 3D & Láser | Diseñado con <i class="fa-solid fa-heart text-danger"></i> y creatividad</p>
     <p>
-      Correo electrónico: 
-      <a href="mailto:hazermexgroup@gmail.com">hazermexgroup@gmail.com</a> | 
-      Celular: 
-      <a href="tel:+521234567890">55 4505 7007</a>
+      Correo: <a href="mailto:hazermexgroup@gmail.com">hazermexgroup@gmail.com</a> | 
+      Tel: <a href="tel:+525545057007">55 4505 7007</a>
     </p>
-    <p>Síguenos: 
-      <a href="https://www.facebook.com/share/1JejSkvDnj/" target="_blank" rel="noopener noreferrer">
-        <i class="fa-brands fa-facebook"></i>
-      </a>
-      <a href="https://www.instagram.com/hazermex?igsh=MTV2eGZtZ3o3c2l1YQ==" target="_blank" rel="noopener noreferrer">
-        <i class="fa-brands fa-instagram"></i>
-      </a> 
-      <a href="" target="_blank" rel="noopener noreferrer">
-        <i class="fa-brands fa-tiktok"></i>
-      </a>
+    <p>Síguenos:
+      <a href="https://www.facebook.com/share/1JejSkvDnj/" target="_blank"><i class="fa-brands fa-facebook fa-lg me-2"></i></a>
+      <a href="https://www.instagram.com/hazermex" target="_blank"><i class="fa-brands fa-instagram fa-lg me-2"></i></a>
+      <a href="#"><i class="fa-brands fa-tiktok fa-lg"></i></a>
     </p>
   </div>
 </footer>
@@ -205,21 +237,18 @@
 <script>
   AOS.init({ duration: 1000, once: true });
 
-  // Abrir modal al hacer clic en el logo
+  // Modal logo
   const logo = document.getElementById('navbarLogo');
   const logoModal = new bootstrap.Modal(document.getElementById('logoModal'));
-  logo.addEventListener('click', () => {
-    logoModal.show();
-  });
+  logo.addEventListener('click', () => logoModal.show());
 
-  // Abrir productos en nueva pestaña
+  // Botones catálogo
   document.querySelectorAll(".abrir-productos").forEach(btn => {
     btn.addEventListener("click", function () {
       const tipo = this.getAttribute("data-tipo");
-      window.location.href = `productos.html?tipo=${tipo}`; 
+      window.location.href = `productos.html?tipo=${tipo}`;
     });
   });
 </script>
-
 </body>
 </html>
