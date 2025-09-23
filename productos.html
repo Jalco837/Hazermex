@@ -29,13 +29,25 @@
     .card-img-top {
       max-height: 200px;
       object-fit: contain;
-      cursor: pointer; /* Indica que se puede hacer clic */
+      cursor: pointer;
     }
     .btn-secondary {
       border-radius: 30px;
       padding: 10px 20px;
       font-size: 16px;
       margin-bottom: 20px;
+    }
+    .btn-warning {
+      border-radius: 30px;
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    .no-disponible {
+      margin-top: 10px;
+      font-weight: bold;
+      color: #fa0404;
     }
     .card-text span {
       font-weight: 600;
@@ -76,9 +88,10 @@
   const params = new URLSearchParams(window.location.search);
   const tipo = params.get("tipo");
 
-  // Diccionario de productos
+  // Diccionario de productos con enlaces de Mercado Libre
   const productos = {
     mandalas: [
+      { img: "images/mandalas/mandalauno.png", nombre: "Mandala 1", modelo: "M-001", medidas: "20x20 cm", material: "MDF", precio: "$150", desc: "Diseño decorativo único.", link: "https://articulo.mercadolibre.com.mx/MLM-1234567890" },
       { img: "images/mandalas/mandalauno.png", nombre: "Mandala 1", modelo: "M-001", medidas: "20x20 cm", material: "MDF", precio: "$150", desc: "Diseño decorativo único." },
       { img: "images/mandalas/mandalados.png", nombre: "Mandala 1", modelo: "M-001", medidas: "20x20 cm", material: "MDF", precio: "$150", desc: "Diseño decorativo único." },
       { img: "images/mandalas/mandalatres.png", nombre: "Mandala 1", modelo: "M-001", medidas: "20x20 cm", material: "MDF", precio: "$150", desc: "Diseño decorativo único." },
@@ -91,7 +104,7 @@
       { img: "images/mandalas/mandaladiez.png", nombre: "Mandala 1", modelo: "M-001", medidas: "20x20 cm", material: "MDF", precio: "$150", desc: "Diseño decorativo único." },
       { img: "images/mandalas/mandalaonce.png", nombre: "Mandala 1", modelo: "M-001", medidas: "20x20 cm", material: "MDF", precio: "$150", desc: "Diseño decorativo único." },
       { img: "images/mandalas/mandaladoce.png", nombre: "Mandala 1", modelo: "M-001", medidas: "20x20 cm", material: "MDF", precio: "$150", desc: "Diseño decorativo único." }
-   
+ 
     ],
     bodas: [
       { img: "images/bodas/letrerouno.png", nombre: "Mandala 1", modelo: "M-001", medidas: "20x20 cm", material: "MDF", precio: "$150", desc: "Diseño decorativo único." },
@@ -116,9 +129,10 @@
       { img: "images/bodas/bodaveinte.png", nombre: "Mandala 1", modelo: "M-001", medidas: "20x20 cm", material: "MDF", precio: "$150", desc: "Diseño decorativo único." },
       { img: "images/bodas/bodavuno.png", nombre: "Mandala 1", modelo: "M-001", medidas: "20x20 cm", material: "MDF", precio: "$150", desc: "Diseño decorativo único." },
       { img: "images/bodas/bodavdos.png", nombre: "Mandala 1", modelo: "M-001", medidas: "20x20 cm", material: "MDF", precio: "$150", desc: "Diseño decorativo único." }
+
     ],
     navidad: [
-      { img: "images/navidad/navidaduno.png", nombre: "Adorno 1", modelo: "N-001", medidas: "8x8 cm", material: "Acrílico", precio: "$90", desc: "Perfecto para el árbol de Navidad." },
+     { img: "images/navidad/navidaduno.png", nombre: "Adorno 1", modelo: "N-001", medidas: "8x8 cm", material: "Acrílico", precio: "$90", desc: "Perfecto para el árbol de Navidad." },
       { img: "images/navidad/navidaddos.png", nombre: "Adorno 2", modelo: "N-002", medidas: "10x10 cm", material: "Acrílico", precio: "$110", desc: "Decoración festiva en acrílico." },
       { img: "images/navidad/navidadtres.png", nombre: "Adorno 1", modelo: "N-001", medidas: "8x8 cm", material: "Acrílico", precio: "$90", desc: "Perfecto para el árbol de Navidad." },
       { img: "images/navidad/navidadcuatro.png", nombre: "Adorno 2", modelo: "N-002", medidas: "10x10 cm", material: "Acrílico", precio: "$110", desc: "Decoración festiva en acrílico." },
@@ -143,12 +157,8 @@
       { img: "images/navidad/navidadvtres.png", nombre: "Adorno 2", modelo: "N-002", medidas: "10x10 cm", material: "Acrílico", precio: "$110", desc: "Decoración festiva en acrílico." },
       { img: "images/navidad/navidadvcuatro.png", nombre: "Adorno 1", modelo: "N-001", medidas: "8x8 cm", material: "Acrílico", precio: "$90", desc: "Perfecto para el árbol de Navidad." },
       { img: "images/navidad/navidadvcinco.png", nombre: "Adorno 2", modelo: "N-002", medidas: "10x10 cm", material: "Acrílico", precio: "$110", desc: "Decoración festiva en acrílico." }
-    
-    
-    
-    
+
     ]
-    // Agrega otros tipos si los necesitas
   };
 
   const container = document.getElementById("cardsContainer");
@@ -169,6 +179,11 @@
               <p class="card-text"><span>Material:</span> ${item.material}</p>
               <p class="card-text"><span>Precio:</span> ${item.precio}</p>
               <p class="card-text">${item.desc}</p>
+              ${
+                item.link
+                  ? `<a href="${item.link}" target="_blank" class="btn btn-warning">Comprar en Mercado Libre</a>`
+                  : `<p class="no-disponible">No disponible por el momento</p>`
+              }
             </div>
           </div>
         </div>`;
@@ -192,27 +207,3 @@
 
 </body>
 </html>
-
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-    
-   
