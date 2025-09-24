@@ -26,9 +26,10 @@
       margin-bottom: 40px;
       font-weight: 800;
       color: #fff;
+      white-space: normal; 
       text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
       letter-spacing: 2px;
-      font-size: 2.8rem;
+      font-size: 2.4rem;
     }
 
     .btn-secondary {
@@ -131,6 +132,9 @@
       justify-content: center;
       border-top: none;
     }
+ 
+  /* permite que el texto salte de línea */
+
   </style>
 </head>
 <body>
@@ -281,7 +285,7 @@ centros_de_mesa: [
       { img: "images/centros_de_mesa/cmcinco.png", nombre: "Adorno 2", modelo: "N-002", medidas: "10x10 cm", material: "Acrílico", precio: "$110", desc: "Decoración festiva en acrílico." },
 
 ],
-xv_años: [
+ xv_años: [
       { img: "images/xv_años/xvuno.png", nombre: "Adorno 1", modelo: "N-001", medidas: "8x8 cm", material: "Acrílico", precio: "$90", desc: "Perfecto para el árbol de Navidad." },
       { img: "images/xv_años/xvdos.png", nombre: "Adorno 2", modelo: "N-002", medidas: "10x10 cm", material: "Acrílico", precio: "$110", desc: "Decoración festiva en acrílico." },
       { img: "images/xv_años/xvtres.png", nombre: "Adorno 1", modelo: "N-001", medidas: "8x8 cm", material: "Acrílico", precio: "$90", desc: "Perfecto para el árbol de Navidad." },
@@ -324,7 +328,7 @@ organizadores: [
 
       ],
 
-cajas_de_almacenamiento: [
+almacenamiento: [
       { img: "images/cajas_de_almacenamiento/cauno.png", nombre: "Adorno 1", modelo: "N-001", medidas: "8x8 cm", material: "Acrílico", precio: "$90", desc: "Perfecto para el árbol de Navidad." },
       { img: "images/cajas_de_almacenamiento/cados.png", nombre: "Adorno 2", modelo: "N-002", medidas: "10x10 cm", material: "Acrílico", precio: "$110", desc: "Decoración festiva en acrílico." },
       { img: "images/cajas_de_almacenamiento/catres.png", nombre: "Adorno 1", modelo: "N-001", medidas: "8x8 cm", material: "Acrílico", precio: "$90", desc: "Perfecto para el árbol de Navidad." },
@@ -380,6 +384,7 @@ cajas_de_almacenamiento: [
   } else {
     titulo.textContent = "No hay productos disponibles";
   }
+  
 </script>
 
 </body>
