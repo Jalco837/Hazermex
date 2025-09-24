@@ -51,7 +51,7 @@
     .card {
       border: none;
       border-radius: 25px;
-      background: rgba(255,255,255,0.6);
+      background: rgba(255,255,255,0.5);
       box-shadow: 0 15px 25px rgba(0,0,0,0.2);
       transition: transform 0.4s, box-shadow 0.4s;
       overflow: hidden;
@@ -170,7 +170,6 @@
   const productos = {
     mandalas: [
       { img: "images/mandalas/mandalauno.png", nombre: "Mandala 1", modelo: "M-001", medidas: "20x20 cm", material: "MDF", precio: "$150", desc: "Diseño decorativo único.", link: "https://articulo.mercadolibre.com.mx/MLM-1234567890" },
-      { img: "images/mandalas/mandalauno.png", nombre: "Mandala 1", modelo: "M-001", medidas: "20x20 cm", material: "MDF", precio: "$150", desc: "Diseño decorativo único." },
       { img: "images/mandalas/mandalados.png", nombre: "Mandala 1", modelo: "M-001", medidas: "20x20 cm", material: "MDF", precio: "$150", desc: "Diseño decorativo único." },
       { img: "images/mandalas/mandalatres.png", nombre: "Mandala 1", modelo: "M-001", medidas: "20x20 cm", material: "MDF", precio: "$150", desc: "Diseño decorativo único." },
       { img: "images/mandalas/mandalacuatro.png", nombre: "Mandala 1", modelo: "M-001", medidas: "20x20 cm", material: "MDF", precio: "$150", desc: "Diseño decorativo único." },
@@ -206,7 +205,16 @@
       { img: "images/bodas/bodadnueve.png", nombre: "Mandala 1", modelo: "M-001", medidas: "20x20 cm", material: "MDF", precio: "$150", desc: "Diseño decorativo único." },
       { img: "images/bodas/bodaveinte.png", nombre: "Mandala 1", modelo: "M-001", medidas: "20x20 cm", material: "MDF", precio: "$150", desc: "Diseño decorativo único." },
       { img: "images/bodas/bodavuno.png", nombre: "Mandala 1", modelo: "M-001", medidas: "20x20 cm", material: "MDF", precio: "$150", desc: "Diseño decorativo único." },
-      { img: "images/bodas/bodavdos.png", nombre: "Mandala 1", modelo: "M-001", medidas: "20x20 cm", material: "MDF", precio: "$150", desc: "Diseño decorativo único." }
+      { img: "images/bodas/bodavdos.png", nombre: "Mandala 1", modelo: "M-001", medidas: "20x20 cm", material: "MDF", precio: "$150", desc: "Diseño decorativo único." },
+      { img: "images/bodas/bodavtres.png", nombre: "Mandala 1", modelo: "M-001", medidas: "20x20 cm", material: "MDF", precio: "$150", desc: "Diseño decorativo único." },
+      { img: "images/bodas/bodavcuatro.png", nombre: "Mandala 1", modelo: "M-001", medidas: "20x20 cm", material: "MDF", precio: "$150", desc: "Diseño decorativo único." },
+      { img: "images/bodas/bodavcinco.png", nombre: "Mandala 1", modelo: "M-001", medidas: "20x20 cm", material: "MDF", precio: "$150", desc: "Diseño decorativo único." },
+      { img: "images/bodas/bodavseis.png", nombre: "Mandala 1", modelo: "M-001", medidas: "20x20 cm", material: "MDF", precio: "$150", desc: "Diseño decorativo único." },
+       { img: "images/bodas/bodavsiete.png", nombre: "Mandala 1", modelo: "M-001", medidas: "20x20 cm", material: "MDF", precio: "$150", desc: "Diseño decorativo único." },
+      { img: "images/bodas/bodavocho.png", nombre: "Mandala 1", modelo: "M-001", medidas: "20x20 cm", material: "MDF", precio: "$150", desc: "Diseño decorativo único." },
+      { img: "images/bodas/bodavnueve.png", nombre: "Mandala 1", modelo: "M-001", medidas: "20x20 cm", material: "MDF", precio: "$150", desc: "Diseño decorativo único." },
+      { img: "images/bodas/bodatreinta.png", nombre: "Mandala 1", modelo: "M-001", medidas: "20x20 cm", material: "MDF", precio: "$150", desc: "Diseño decorativo único." },
+      { img: "images/bodas/bodatuno.png", nombre: "Mandala 1", modelo: "M-001", medidas: "20x20 cm", material: "MDF", precio: "$150", desc: "Diseño decorativo único." }
 
     ],
     navidad: [
@@ -236,8 +244,109 @@
       { img: "images/navidad/navidadvcuatro.png", nombre: "Adorno 1", modelo: "N-001", medidas: "8x8 cm", material: "Acrílico", precio: "$90", desc: "Perfecto para el árbol de Navidad." },
       { img: "images/navidad/navidadvcinco.png", nombre: "Adorno 2", modelo: "N-002", medidas: "10x10 cm", material: "Acrílico", precio: "$110", desc: "Decoración festiva en acrílico." }
 
-    ]
+    ],
+    hallowen: [
+     { img: "images/hallowen/huno.png", nombre: "Adorno 1", modelo: "N-001", medidas: "8x8 cm", material: "Acrílico", precio: "$90", desc: "Perfecto para el árbol de Navidad." },
+      { img: "images/hallowen/hdos.png", nombre: "Adorno 2", modelo: "N-002", medidas: "10x10 cm", material: "Acrílico", precio: "$110", desc: "Decoración festiva en acrílico." },
+      { img: "images/hallowen/htres.png", nombre: "Adorno 1", modelo: "N-001", medidas: "8x8 cm", material: "Acrílico", precio: "$90", desc: "Perfecto para el árbol de Navidad." },
+      { img: "images/hallowen/hcuatro.png", nombre: "Adorno 2", modelo: "N-002", medidas: "10x10 cm", material: "Acrílico", precio: "$110", desc: "Decoración festiva en acrílico." },
+      { img: "images/hallowen/hcinco.png", nombre: "Adorno 1", modelo: "N-001", medidas: "8x8 cm", material: "Acrílico", precio: "$90", desc: "Perfecto para el árbol de Navidad." },
+      { img: "images/hallowen/hseis.png", nombre: "Adorno 1", modelo: "N-001", medidas: "8x8 cm", material: "Acrílico", precio: "$90", desc: "Perfecto para el árbol de Navidad." },
+      { img: "images/hallowen/hsiete.png", nombre: "Adorno 2", modelo: "N-002", medidas: "10x10 cm", material: "Acrílico", precio: "$110", desc: "Decoración festiva en acrílico." },
+      { img: "images/hallowen/hocho.png", nombre: "Adorno 1", modelo: "N-001", medidas: "8x8 cm", material: "Acrílico", precio: "$90", desc: "Perfecto para el árbol de Navidad." },
+      { img: "images/hallowen/hnueve.png", nombre: "Adorno 2", modelo: "N-002", medidas: "10x10 cm", material: "Acrílico", precio: "$110", desc: "Decoración festiva en acrílico." },
+      { img: "images/hallowen/hdiez.png", nombre: "Adorno 1", modelo: "N-001", medidas: "8x8 cm", material: "Acrílico", precio: "$90", desc: "Perfecto para el árbol de Navidad." },
+      { img: "images/hallowen/honce.png", nombre: "Adorno 2", modelo: "N-002", medidas: "10x10 cm", material: "Acrílico", precio: "$110", desc: "Decoración festiva en acrílico." },
+      { img: "images/hallowen/hdoce.png", nombre: "Adorno 1", modelo: "N-001", medidas: "8x8 cm", material: "Acrílico", precio: "$90", desc: "Perfecto para el árbol de Navidad." },
+      { img: "images/hallowen/htrece.png", nombre: "Adorno 1", modelo: "N-001", medidas: "8x8 cm", material: "Acrílico", precio: "$90", desc: "Perfecto para el árbol de Navidad." },
+      { img: "images/hallowen/hcatorce.png", nombre: "Adorno 1", modelo: "N-001", medidas: "8x8 cm", material: "Acrílico", precio: "$90", desc: "Perfecto para el árbol de Navidad." },
+    ],
 
+ san_valentin: [
+      { img: "images/san_valentin/svuno.png", nombre: "Adorno 1", modelo: "N-001", medidas: "8x8 cm", material: "Acrílico", precio: "$90", desc: "Perfecto para el árbol de Navidad." },
+      { img: "images/san_valentin/svdos.png", nombre: "Adorno 2", modelo: "N-002", medidas: "10x10 cm", material: "Acrílico", precio: "$110", desc: "Decoración festiva en acrílico." },
+],
+aniversarios: [
+      { img: "images/aniversarios/auno.png", nombre: "Adorno 1", modelo: "N-001", medidas: "8x8 cm", material: "Acrílico", precio: "$90", desc: "Perfecto para el árbol de Navidad." },
+      { img: "images/aniversarios/ados.png", nombre: "Adorno 2", modelo: "N-002", medidas: "10x10 cm", material: "Acrílico", precio: "$110", desc: "Decoración festiva en acrílico." },
+      { img: "images/aniversarios/atres.png", nombre: "Adorno 1", modelo: "N-001", medidas: "8x8 cm", material: "Acrílico", precio: "$90", desc: "Perfecto para el árbol de Navidad." },
+      { img: "images/aniversarios/acuatro.png", nombre: "Adorno 2", modelo: "N-002", medidas: "10x10 cm", material: "Acrílico", precio: "$110", desc: "Decoración festiva en acrílico." },
+],
+
+centros_de_mesa: [
+      { img: "images/centros_de_mesa/cmuno.png", nombre: "Adorno 1", modelo: "N-001", medidas: "8x8 cm", material: "Acrílico", precio: "$90", desc: "Perfecto para el árbol de Navidad." },
+      { img: "images/centros_de_mesa/cmdos.png", nombre: "Adorno 2", modelo: "N-002", medidas: "10x10 cm", material: "Acrílico", precio: "$110", desc: "Decoración festiva en acrílico." },
+      { img: "images/centros_de_mesa/cmtres.png", nombre: "Adorno 1", modelo: "N-001", medidas: "8x8 cm", material: "Acrílico", precio: "$90", desc: "Perfecto para el árbol de Navidad." },
+      { img: "images/centros_de_mesa/cmcuatro.png", nombre: "Adorno 2", modelo: "N-002", medidas: "10x10 cm", material: "Acrílico", precio: "$110", desc: "Decoración festiva en acrílico." },
+      { img: "images/centros_de_mesa/cmcinco.png", nombre: "Adorno 2", modelo: "N-002", medidas: "10x10 cm", material: "Acrílico", precio: "$110", desc: "Decoración festiva en acrílico." },
+
+],
+xv_años: [
+      { img: "images/xv_años/xvuno.png", nombre: "Adorno 1", modelo: "N-001", medidas: "8x8 cm", material: "Acrílico", precio: "$90", desc: "Perfecto para el árbol de Navidad." },
+      { img: "images/xv_años/xvdos.png", nombre: "Adorno 2", modelo: "N-002", medidas: "10x10 cm", material: "Acrílico", precio: "$110", desc: "Decoración festiva en acrílico." },
+      { img: "images/xv_años/xvtres.png", nombre: "Adorno 1", modelo: "N-001", medidas: "8x8 cm", material: "Acrílico", precio: "$90", desc: "Perfecto para el árbol de Navidad." },
+      { img: "images/xv_años/xvcuatro.png", nombre: "Adorno 2", modelo: "N-002", medidas: "10x10 cm", material: "Acrílico", precio: "$110", desc: "Decoración festiva en acrílico." },
+      { img: "images/xv_años/xvcinco.png", nombre: "Adorno 2", modelo: "N-002", medidas: "10x10 cm", material: "Acrílico", precio: "$110", desc: "Decoración festiva en acrílico." },
+      { img: "images/xv_años/xvseis.png", nombre: "Adorno 1", modelo: "N-001", medidas: "8x8 cm", material: "Acrílico", precio: "$90", desc: "Perfecto para el árbol de Navidad." },
+      { img: "images/xv_años/xvsiete.png", nombre: "Adorno 2", modelo: "N-002", medidas: "10x10 cm", material: "Acrílico", precio: "$110", desc: "Decoración festiva en acrílico." },
+      { img: "images/xv_años/xvocho.png", nombre: "Adorno 1", modelo: "N-001", medidas: "8x8 cm", material: "Acrílico", precio: "$90", desc: "Perfecto para el árbol de Navidad." },
+      { img: "images/xv_años/xvnueve.png", nombre: "Adorno 2", modelo: "N-002", medidas: "10x10 cm", material: "Acrílico", precio: "$110", desc: "Decoración festiva en acrílico." },
+      { img: "images/xv_años/xvdiez.png", nombre: "Adorno 2", modelo: "N-002", medidas: "10x10 cm", material: "Acrílico", precio: "$110", desc: "Decoración festiva en acrílico." },
+      { img: "images/xv_años/xvonce.png", nombre: "Adorno 2", modelo: "N-002", medidas: "10x10 cm", material: "Acrílico", precio: "$110", desc: "Decoración festiva en acrílico." },
+      { img: "images/xv_años/xvdoce.png", nombre: "Adorno 1", modelo: "N-001", medidas: "8x8 cm", material: "Acrílico", precio: "$90", desc: "Perfecto para el árbol de Navidad." },
+      { img: "images/xv_años/xvtrece.png", nombre: "Adorno 2", modelo: "N-002", medidas: "10x10 cm", material: "Acrílico", precio: "$110", desc: "Decoración festiva en acrílico." },
+      { img: "images/xv_años/xvcatorce.png", nombre: "Adorno 2", modelo: "N-002", medidas: "10x10 cm", material: "Acrílico", precio: "$110", desc: "Decoración festiva en acrílico." },
+
+],
+    personalizados: [
+     { img: "images/personalizados/puno.png", nombre: "Adorno 1", modelo: "N-001", medidas: "8x8 cm", material: "Acrílico", precio: "$90", desc: "Perfecto para el árbol de Navidad." },   
+],
+repisas: [
+      { img: "images/repisas/runo.png", nombre: "Adorno 1", modelo: "N-001", medidas: "8x8 cm", material: "Acrílico", precio: "$90", desc: "Perfecto para el árbol de Navidad." },
+      { img: "images/repisas/rdos.png", nombre: "Adorno 2", modelo: "N-002", medidas: "10x10 cm", material: "Acrílico", precio: "$110", desc: "Decoración festiva en acrílico." },
+      { img: "images/repisas/rtres.png", nombre: "Adorno 1", modelo: "N-001", medidas: "8x8 cm", material: "Acrílico", precio: "$90", desc: "Perfecto para el árbol de Navidad." },
+      { img: "images/repisas/rcuatro.png", nombre: "Adorno 2", modelo: "N-002", medidas: "10x10 cm", material: "Acrílico", precio: "$110", desc: "Decoración festiva en acrílico." },
+      { img: "images/repisas/rcinco.png", nombre: "Adorno 2", modelo: "N-002", medidas: "10x10 cm", material: "Acrílico", precio: "$110", desc: "Decoración festiva en acrílico." },
+      { img: "images/repisas/rseis.png", nombre: "Adorno 1", modelo: "N-001", medidas: "8x8 cm", material: "Acrílico", precio: "$90", desc: "Perfecto para el árbol de Navidad." },
+      { img: "images/repisas/rsiete.png", nombre: "Adorno 1", modelo: "N-001", medidas: "8x8 cm", material: "Acrílico", precio: "$90", desc: "Perfecto para el árbol de Navidad." },
+      { img: "images/repisas/rocho.png", nombre: "Adorno 2", modelo: "N-002", medidas: "10x10 cm", material: "Acrílico", precio: "$110", desc: "Decoración festiva en acrílico." },
+      { img: "images/repisas/rnueve.png", nombre: "Adorno 2", modelo: "N-002", medidas: "10x10 cm", material: "Acrílico", precio: "$110", desc: "Decoración festiva en acrílico." },
+      { img: "images/repisas/rdiez.png", nombre: "Adorno 1", modelo: "N-001", medidas: "8x8 cm", material: "Acrílico", precio: "$90", desc: "Perfecto para el árbol de Navidad." },
+      { img: "images/repisas/ronce.png", nombre: "Adorno 1", modelo: "N-001", medidas: "8x8 cm", material: "Acrílico", precio: "$90", desc: "Perfecto para el árbol de Navidad." },
+
+      ],
+
+organizadores: [
+      { img: "images/organizadores/ouno.png", nombre: "Adorno 1", modelo: "N-001", medidas: "8x8 cm", material: "Acrílico", precio: "$90", desc: "Perfecto para el árbol de Navidad." },
+      { img: "images/organizadores/odos.png", nombre: "Adorno 2", modelo: "N-002", medidas: "10x10 cm", material: "Acrílico", precio: "$110", desc: "Decoración festiva en acrílico." },
+      { img: "images/organizadores/otres.png", nombre: "Adorno 1", modelo: "N-001", medidas: "8x8 cm", material: "Acrílico", precio: "$90", desc: "Perfecto para el árbol de Navidad." },
+      { img: "images/organizadores/ocuatro.png", nombre: "Adorno 2", modelo: "N-002", medidas: "10x10 cm", material: "Acrílico", precio: "$110", desc: "Decoración festiva en acrílico." },
+      { img: "images/organizadores/ocinco.png", nombre: "Adorno 2", modelo: "N-002", medidas: "10x10 cm", material: "Acrílico", precio: "$110", desc: "Decoración festiva en acrílico." },
+      { img: "images/organizadores/oseis.png", nombre: "Adorno 1", modelo: "N-001", medidas: "8x8 cm", material: "Acrílico", precio: "$90", desc: "Perfecto para el árbol de Navidad." },
+
+      ],
+
+cajas_de_almacenamiento: [
+      { img: "images/cajas_de_almacenamiento/cauno.png", nombre: "Adorno 1", modelo: "N-001", medidas: "8x8 cm", material: "Acrílico", precio: "$90", desc: "Perfecto para el árbol de Navidad." },
+      { img: "images/cajas_de_almacenamiento/cados.png", nombre: "Adorno 2", modelo: "N-002", medidas: "10x10 cm", material: "Acrílico", precio: "$110", desc: "Decoración festiva en acrílico." },
+      { img: "images/cajas_de_almacenamiento/catres.png", nombre: "Adorno 1", modelo: "N-001", medidas: "8x8 cm", material: "Acrílico", precio: "$90", desc: "Perfecto para el árbol de Navidad." },
+      { img: "images/cajas_de_almacenamiento/cacuatro.png", nombre: "Adorno 2", modelo: "N-002", medidas: "10x10 cm", material: "Acrílico", precio: "$110", desc: "Decoración festiva en acrílico." },
+      { img: "images/cajas_de_almacenamiento/cacinco.png", nombre: "Adorno 2", modelo: "N-002", medidas: "10x10 cm", material: "Acrílico", precio: "$110", desc: "Decoración festiva en acrílico." },
+      { img: "images/cajas_de_almacenamiento/caseis.png", nombre: "Adorno 1", modelo: "N-001", medidas: "8x8 cm", material: "Acrílico", precio: "$90", desc: "Perfecto para el árbol de Navidad." },
+
+      ],
+    
+
+
+
+
+
+
+
+
+
+
+      
   };
 
   const container = document.getElementById("cardsContainer");
