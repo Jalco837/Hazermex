@@ -157,16 +157,23 @@
     transform: translateY(-10px);
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
   }
-
-    /* Footer */
+/* Footer */
     footer {
-      background: #0d0d0d;
+      background: linear-gradient(90deg, #0f0c29, #302b63, #24243e);
       color: #bbb;
       padding: 40px 0;
     }
     footer a {
       color: #ff512f;
-      text-decoration: none;
+      transition: all 0.3s;
+    }
+    footer a:hover {
+      color: #dd2476;
+      text-shadow: 0 0 5px #dd2476;
+    }
+    footer p {
+      margin: 5px 0;
+      font-size: 0.95rem;
     }
 
     /* Logo */

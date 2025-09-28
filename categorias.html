@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hazermex - Catálogo</title>
+  <!-- Bootstrap & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(180deg, #fdfbfb 0%, #ebedee 100%);
+      color: #333;
+    }
+
+    /* Navbar */
+    .navbar {
+      background: linear-gradient(90deg, #ff512f, #dd2476);
+      padding: 12px 0;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+    .navbar .nav-link {
+      font-weight: 600;
+      margin-left: 15px;
+      color: white !important;
+      transition: all 0.3s ease;
+    }
+    .navbar .nav-link:hover {
+      color: #ffe082 !important;
+      transform: scale(1.05);
+    }
+    .navbar-brand span {
+      color: white;
+      font-size: 1.4rem;
+      letter-spacing: 1px;
+    }
+
+    /* Cards estilo glass */
+    .card {
+      border: none;
+      border-radius: 18px;
+      backdrop-filter: blur(12px);
+      background: rgba(255, 255, 255, 0.8);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+    .card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    }
+    .card img {
+      height: 220px;
+      object-fit: cover;
+      border-bottom: 4px solid #ff512f;
+    }
+    .card-title {
+      font-weight: 700;
+      color: #222;
+    }
+    .card-text {
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    /* Iconos */
+    .icon-btn {
+      font-size: 2rem;
+      cursor: pointer;
+      transition: transform 0.3s ease, text-shadow 0.3s ease;
+    }
+    .icon-btn:hover {
+      transform: scale(1.2);
+      text-shadow: 0 0 10px rgba(255, 81, 47, 0.8);
+    }
+    .icon-color1 { color: #007bff; }
+    .icon-color2 { color: #28a745; }
+    .icon-color3 { color: #dc3545; }
+    .icon-color4 { color: #9c10b9; }
+    .icon-color5 { color: #ffc107; }
+    .icon-color6 { color: #6f42c1; }
+    .icon-color7 { color: #00c9a7; }
+    .icon-color8 { color: #ff0080; }
+
+    /* Títulos */
+    section h2 {
+      font-weight: 800;
+      font-size: 2.2rem;
+      margin-bottom: 50px;
+      color: #222;
+      position: relative;
+      display: inline-block;
+      padding-bottom: 8px;
+    }
+    section h2::after {
+      content: "";
+      position: absolute;
+      width: 70%;
+      height: 4px;
+      background: linear-gradient(90deg, #ff512f, #dd2476);
+      bottom: -10px;
+      left: 15%;
+      border-radius: 3px;
+    }
+
+    /* Footer */
+    footer {
+      background: linear-gradient(90deg, #0f0c29, #302b63, #24243e);
+      color: #bbb;
+      padding: 40px 0;
+    }
+    footer a {
+      color: #ff512f;
+      transition: all 0.3s;
+    }
+    footer a:hover {
+      color: #dd2476;
+      text-shadow: 0 0 5px #dd2476;
+    }
+    footer p {
+      margin: 5px 0;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href="#">
+      <img id="navbarLogo" src="images/logotipo.png" alt="Hazermex Logo" width="55" height="55" class="me-2 rounded-circle bg-white p-1">
+      <span class="fw-bold">HAZERMEX</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link active" href="index.html">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="catalogo.html">Catálogo</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#servicios">Servicios</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#proceso">Proceso</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#testimonios">Testimonios</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#faq">Preguntas frecuentes</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#cotizacion">Cotización</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#contacto">Contacto</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Modal Logo -->
+<div class="modal fade" id="logoModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-fullscreen">
+    <div class="modal-content">
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      <img src="images/logotipo.png" alt="Hazermex Logo en grande">
+    </div>
+  </div>
+</div>
+
+<!-- Modal de notificación -->
+<div class="modal fade" id="notificacionModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content text-center">
+      <div class="modal-header bg-warning text-dark">
+        <h5 class="modal-title"><i class="fa-solid fa-bell me-2"></i> Aviso</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body">
+        Recuerda que si no visualizas algún producto puedes realizar tu cotización y con gusto te atenderemos.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Catálogo -->
+<section class="container py-5" style="margin-top:90px;">
+  <h2 class="text-center" data-aos="fade-up">Catálogo de Productos</h2>
+  <div class="row g-4 justify-content-center">
+    
+    <!-- Corte Láser -->
+    <div class="col-md-4" data-aos="zoom-in">
+      <div class="card h-100">
+        <img src="images/cortelaser.png" class="card-img-top" alt="Corte Láser">
+        <div class="card-body text-center">
+          <h5 class="card-title">Corte Láser</h5>
+          <p class="card-text">Piezas únicas en distintos materiales.</p>
+          <div class="d-flex justify-content-center gap-3">
+            <i class="bi bi-flower1 icon-btn icon-color2 abrir-productos" data-bs-toggle="tooltip" title="Mandalas" data-tipo="mandalas"></i>
+            <i class="bi bi-heart-fill icon-btn icon-color1 abrir-productos" data-bs-toggle="tooltip" title="Bodas" data-tipo="bodas"></i>
+            <i class="bi bi-gift-fill icon-btn icon-color3 abrir-productos" data-bs-toggle="tooltip" title="Navidad" data-tipo="navidad"></i>
+            <i class="bi bi-emoji-smile-fill icon-btn icon-color4 abrir-productos" data-bs-toggle="tooltip" title="Halloween" data-tipo="hallowen"></i>
+            <i class="bi bi-star-fill icon-btn icon-color5 abrir-productos" data-bs-toggle="tooltip" title="Aniversarios" data-tipo="aniversarios"></i>
+            <i class="bi bi-balloon-heart-fill icon-btn icon-color8 abrir-productos" data-bs-toggle="tooltip" title="XV Años" data-tipo="xv_años"></i>
+            <i class="bi bi-cup-straw icon-btn icon-color7 abrir-productos" data-bs-toggle="tooltip" title="Centros de mesa" data-tipo="centros_de_mesa"></i>
+            <i class="bi bi-heartbreak-fill icon-btn icon-color6 abrir-productos" data-bs-toggle="tooltip" title="San Valentín" data-tipo="san_valentin"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Impresión 3D -->
+    <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+      <div class="card h-100">
+        <img src="images/impresion.png" class="card-img-top" alt="Impresión 3D">
+        <div class="card-body text-center">
+          <h5 class="card-title">Impresión 3D</h5>
+          <p class="card-text">Modelos en alta resolución y calidad.</p>
+          <div class="d-flex justify-content-center gap-3">
+            <i class="bi bi-box-seam icon-btn icon-color1 abrir-productos" data-bs-toggle="tooltip" title="Modelos 1" data-tipo="modelos1"></i>
+            <i class="bi bi-cube icon-btn icon-color2 abrir-productos" data-bs-toggle="tooltip" title="Modelos 2" data-tipo="modelos2"></i>
+            <i class="bi bi-dice-5-fill icon-btn icon-color3 abrir-productos" data-bs-toggle="tooltip" title="Modelos 3" data-tipo="modelos3"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Diseños Personalizados -->
+    <div class="col-md-4" data-aos="zoom-in" data-aos-delay="400">
+      <div class="card h-100">
+        <img src="images/diseños.png" class="card-img-top" alt="Diseños Personalizados">
+        <div class="card-body text-center">
+          <h5 class="card-title">Diseños Personalizados</h5>
+          <p class="card-text">Creamos justo lo que imaginas.</p>
+          <div class="d-flex justify-content-center gap-3">
+            <i class="bi bi-pencil-square icon-btn icon-color1 abrir-productos" data-bs-toggle="tooltip" title="Personalizados" data-tipo="personalizados"></i>
+            <i class="bi bi-house-door-fill icon-btn icon-color2 abrir-productos" data-bs-toggle="tooltip" title="Repisas" data-tipo="repisas"></i>
+            <i class="bi bi-collection-fill icon-btn icon-color3 abrir-productos" data-bs-toggle="tooltip" title="Organizadores" data-tipo="organizadores"></i>
+            <i class="bi bi-box2-fill icon-btn icon-color4 abrir-productos" data-bs-toggle="tooltip" title="Almacenamiento" data-tipo="almacenamiento"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="text-center">
+  <div class="container">
+    <p>© 2025 Taller 3D & Láser | Diseñado con <i class="fa-solid fa-heart text-danger"></i> y creatividad</p>
+    <p>
+      Correo: <a href="mailto:hazermexgroup@gmail.com">hazermexgroup@gmail.com</a> | 
+      Tel: <a href="tel:+525545057007">55 4505 7007</a>
+    </p>
+    <p>Síguenos:
+      <a href="https://www.facebook.com/share/1JejSkvDnj/" target="_blank"><i class="fa-brands fa-facebook fa-lg me-2"></i></a>
+      <a href="https://www.instagram.com/hazermex" target="_blank"><i class="fa-brands fa-instagram fa-lg me-2"></i></a>
+      <a href="#"><i class="fa-brands fa-tiktok fa-lg"></i></a>
+    </p>
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 1000, once: true });
+
+  // Modal logo
+  const logo = document.getElementById('navbarLogo');
+  const logoModal = new bootstrap.Modal(document.getElementById('logoModal'));
+  logo.addEventListener('click', () => logoModal.show());
+
+  // Inicializar tooltips
+  const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+  tooltipTriggerList.forEach(el => new bootstrap.Tooltip(el));
+
+  // Botones catálogo
+  document.querySelectorAll(".abrir-productos").forEach(btn => {
+    btn.addEventListener("click", function () {
+      const tipo = this.getAttribute("data-tipo");
+      window.location.href = `productos.html?tipo=${tipo}`;
+    });
+  });
+
+  // Mostrar modal de notificación 5 segundos después de cargar
+  window.addEventListener("load", () => {
+    const notificacionModal = new bootstrap.Modal(document.getElementById("notificacionModal"));
+    setTimeout(() => {
+      notificacionModal.show();
+      setTimeout(() => {
+        notificacionModal.hide();
+      }, 5000);
+    }, 5000);
+  });
+</script>
+</body>
+</html>
