@@ -124,19 +124,39 @@
       margin-bottom: 15px;
     }
 
-    /* Testimonios */
-    .testimonial {
-      background: #fff;
-      border-radius: 20px;
-      padding: 25px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    }
-    .testimonial img {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      margin-bottom: 10px;
-    }
+     /* Imagen circular con borde animado */
+  .testimonial-img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #0d6efd;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+  }
+  .testimonial-card:hover .testimonial-img {
+    transform: scale(1.1);
+    border-color: #ff4081;
+  }
+
+  /* Texto */
+  .testimonial-text {
+    font-size: 1rem;
+    color: #555;
+    min-height: 80px;
+  }
+  .testimonial-name {
+    color: #0d6efd;
+    font-weight: 600;
+  }
+
+  /* Efecto hover en la tarjeta */
+  .testimonial-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .testimonial-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  }
 
     /* Footer */
     footer {
@@ -178,7 +198,7 @@
       
     }
 
-      #servicios h2 {
+    #servicios h2 {
     font-size: 2.5rem;
     color: #0d6efd;
     position: relative;
@@ -303,41 +323,83 @@
   background: linear-gradient(135deg, #f8faff, #eef2f7);
 }
 
-.testimonial-card {
-  background: #fff;
-  border-radius: 20px;
-  padding: 25px 20px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-  transition: all 0.3s ease-in-out;
-  position: relative;
-  overflow: hidden;
-}
-
-.testimonial-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-}
-
-.testimonial-img {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  border: 4px solid #6c63ff;
-  object-fit: cover;
-  margin-bottom: 15px;
-}
-
-.testimonial-text {
-  font-style: italic;
-  color: #555;
-  font-size: 0.95rem;
-  margin-bottom: 15px;
-}
-
-.testimonial-name {
-  color: #333;
-  font-weight: 600;
-}
+/* Contenedor de la tarjeta */
+  .testimonial-card {
+    perspective: 1000px;
+    cursor: pointer;
+    width: 100%;
+    height: 280px;
+    position: relative;
+  }
+  .testimonial-card .card-front,
+  .testimonial-card .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transition: transform 0.8s;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  /* Frente */
+  .testimonial-card .card-front {
+    background: #fff;
+  }
+  .testimonial-card .card-front img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid #0d6efd;
+    object-fit: cover;
+  }
+  .img-container {
+    position: relative;
+    display: inline-block;
+  }
+  /* Punto parpadeante */
+  .pulse-dot {
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+    width: 15px;
+    height: 15px;
+    background: #ff0000;
+    border-radius: 50%;
+    animation: pulse 1.5s infinite;
+  }
+  @keyframes pulse {
+    0% { transform: scale(0.9); opacity: 0.7; }
+    50% { transform: scale(1.3); opacity: 1; }
+    100% { transform: scale(0.9); opacity: 0.7; }
+  }
+  /* Reverso */
+  .testimonial-card .card-back {
+    background: #0d6efd;
+    color: #fff;
+    transform: rotateY(180deg);
+    text-align: center;
+  }
+  .testimonial-card.flipped .card-front {
+    transform: rotateY(180deg);
+  }
+  .testimonial-card.flipped .card-back {
+    transform: rotateY(360deg);
+  }
+  /* Texto parpadeante */
+  .testimonial-text {
+    animation: blink 1.2s infinite;
+    font-size: 1.1rem;
+    font-weight: 500;
+  }
+  @keyframes blink {
+    0%, 50%, 100% { opacity: 1; }
+    25%, 75% { opacity: 0.3; }
+  }
 #cotizacion {
   background: linear-gradient(135deg, #f8faff, #eef2f7);
 }
@@ -394,9 +456,136 @@ textarea.form-control {
       align-items: center;
       justify-content: center;
     }
+   /* ===== Splash Screen ===== */
+   .splash-content {
+  text-align: center;
+}
+    #splash {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      z-index: 9999;
+      transition: opacity 1s ease;
+    }
+    #splash img {
+      width: 220px;   /* más grande */
+      height: auto;
+      margin-bottom: 25px;
+      animation: zoomBounce 1.8s ease;
+    }
+    #splash h1 {
+      font-size: 3rem;
+      font-weight: 900;
+      background: linear-gradient(90deg, #ff512f, #dd2476);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      -webkit-text-fill-color: transparent;
+      position: relative;
+      overflow: hidden;
+      animation: fadeIn 2s ease;
+    }
+
+    /* Animación de brillo en el texto */
+    #splash h1::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      height: 100%;
+      width: 100%;
+      background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.8),
+        transparent
+      );
+      animation: shine 2s linear infinite;
+    }
+
+    #splash.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    /* Animaciones */
+    @keyframes zoomBounce {
+      0% { transform: scale(0.5); opacity: 0; }
+      60% { transform: scale(1.2); opacity: 1; }
+      100% { transform: scale(1); }
+    }
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+    @keyframes shine {
+      0% { left: -100%; }
+      100% { left: 100%; }
+    }
+    /* Contenedor del texto */
+  .animated-words {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;  /* más cerca del carrusel */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px; /* separación entre palabras */
+  }
+
+  /* Cada palabra */
+  .animated-words span {
+    opacity: 0;
+    animation: fadeIn 0.6s forwards;
+    position: relative;
+  }
+
+  /* Brillo animado */
+  .animated-words span::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      120deg,
+      transparent,
+      rgba(255,255,255,0.8),
+      transparent
+    );
+    animation: shine 5s linear infinite;
+  }
+
+  /* Animaciones */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes shine {
+    0% { left: -100%; }
+    100% { left: 100%; }
+  }
+</style>
   </style>
 </head>
 <body>
+
+<!-- ===== Pantalla de carga ===== -->
+  <div id="splash">
+    <div class="splash-content">
+      <img src="images/logotipo.png" alt="Hazermex Logo">
+      <h1>HAZERMEX</h1>
+    </div>
+  </div>
 
  <!-- Barra de navegación -->
 <nav class="navbar navbar-expand-lg fixed-top">
@@ -453,7 +642,7 @@ textarea.form-control {
     <div class="col-md-4" data-aos="zoom-in">
       <div class="icon-box p-4 shadow-lg rounded-4 h-100 bg-white service-card">
         <i class="fa-solid fa-scissors fa-3x text-primary mb-3"></i>
-        <h5 class="fw-bold text-primary">Corte y Grabados</h5>
+        <h5 class="fw-bold">Corte y Grabados</h5>
         <p class="text-muted">Piezas personalizadas con cortes de precisión en múltiples materiales.</p>
       </div>
     </div>
@@ -602,244 +791,26 @@ textarea.form-control {
 <!-- Nuestros Diseños -->
 <section id="disenos" class="py-5 bg-light text-center">
   <div class="container">
-    <h2 class="fw-bold mb-3" data-aos="fade-up">✨ Nuestros Diseños ✨</h2>
+    <h2 class="fw-bold mb-3 text-primary" data-aos="fade-up">✨ Nuestros Diseños ✨</h2>
     <p class="mb-4 text-muted" data-aos="fade-up" data-aos-delay="100">
       Explora algunos de nuestros diseños personalizados según la ocasión.
     </p>
 
-    <!-- Botones de categorías -->
-    <ul class="nav nav-pills justify-content-center mb-5 gap-2" id="designTabs" role="tablist">
-      <li class="nav-item" role="presentation">
-        <button class="nav-link active shadow-sm" id="bodas-tab" data-bs-toggle="pill" data-bs-target="#bodas" type="button" role="tab" aria-controls="bodas" aria-selected="true">
-          💍 Bodas
-        </button>
-      </li>
-      <li class="nav-item" role="presentation">
-        <button class="nav-link shadow-sm" id="navidad-tab" data-bs-toggle="pill" data-bs-target="#navidad" type="button" role="tab" aria-controls="navidad" aria-selected="false">
-          🎄 Navidad
-        </button>
-      </li>
-      <li class="nav-item" role="presentation">
-        <button class="nav-link shadow-sm" id="muebles-tab" data-bs-toggle="pill" data-bs-target="#muebles" type="button" role="tab" aria-controls="muebles" aria-selected="false">
-          🪑 Muebles
-        </button>
-      </li>
-      <li class="nav-item" role="presentation">
-        <button class="nav-link shadow-sm" id="extras-tab" data-bs-toggle="pill" data-bs-target="#extras" type="button" role="tab" aria-controls="extras" aria-selected="false">
-          ⭐ Extras
-        </button>
-      </li>
-    </ul>
 
-    <!-- Contenido de pestañas -->
-<div class="tab-content" id="designTabsContent">
-  <!-- Bodas -->
-<div class="tab-pane fade show active" id="bodas" role="tabpanel" aria-labelledby="bodas-tab">
-  <div class="row g-4">
-    <div class="col-md-4">
-      <div class="card design-card p-3 text-center shadow-sm border-0">
-        <i class="fa-solid fa-image fa-2x mb-2 text-danger"></i>
-        <h6>Decoración de pared</h6>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="card design-card p-3 text-center shadow-sm border-0">
-        <i class="fa-solid fa-sign-hanging fa-2x mb-2 text-primary"></i>
-        <h6>Letreros</h6>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="card design-card p-3 text-center shadow-sm border-0">
-        <i class="fa-solid fa-utensils fa-2x mb-2 text-success"></i>
-        <h6>Servilleteros</h6>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="card design-card p-3 text-center shadow-sm border-0">
-        <i class="fa-solid fa-table-cells fa-2x mb-2 text-warning"></i>
-        <h6>Centros de mesa</h6>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="card design-card p-3 text-center shadow-sm border-0">
-        <i class="fa-solid fa-gift fa-2x mb-2 text-info"></i>
-        <h6>Recuerdos</h6>
-      </div>
-    </div>
-   <div class="col-md-4">
-  <div class="card design-card p-3 text-center shadow-sm border-0">
-    <i class="fa-solid fa-image fa-2x mb-2 text-secondary"></i>
-    <h6>Porta retratos</h6>
+ <!-- Carrusel incrustado -->
+    <iframe src="carrusel.html" style="width:100%; height:500px; border:none;"></iframe>
   </div>
-</div>
+</section>
 
-    <div class="col-md-4">
-      <div class="card design-card p-3 text-center shadow-sm border-0">
-        <i class="fa-solid fa-key fa-2x mb-2 text-danger"></i>
-        <h6>Llaveros</h6>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Navidad -->
-<div class="tab-pane fade" id="navidad" role="tabpanel" aria-labelledby="navidad-tab">
-  <div class="row g-4">
-    <div class="col-md-4">
-      <div class="card design-card p-3 text-center shadow-sm border-0">
-        <i class="fa-solid fa-image fa-2x mb-2 text-danger"></i>
-        <h6>Decoración de pared</h6>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="card design-card p-3 text-center shadow-sm border-0">
-        <i class="fa-solid fa-snowflake fa-2x mb-2 text-primary"></i>
-        <h6>Esferas</h6>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="card design-card p-3 text-center shadow-sm border-0">
-        <i class="fa-solid fa-baby fa-2x mb-2 text-success"></i>
-        <h6>Nacimientos</h6>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Muebles -->
-<div class="tab-pane fade" id="muebles" role="tabpanel" aria-labelledby="muebles-tab">
-  <div class="row g-4">
-    <div class="col-md-4">
-      <div class="card design-card p-3 text-center shadow-sm border-0">
-        <i class="fa-solid fa-table fa-2x mb-2 text-warning"></i>
-        <h6>Mesas</h6>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="card design-card p-3 text-center shadow-sm border-0">
-        <i class="fa-solid fa-chair fa-2x mb-2 text-primary"></i>
-        <h6>Sillas</h6>
-      </div>
-    </div>
-    <div class="col-md-4">
-  <div class="card design-card p-3 text-center shadow-sm border-0">
-    <i class="fa-solid fa-columns fa-2x mb-2 text-secondary"></i>
-    <h6>Biombos</h6>
-  </div>
-</div>
-    <div class="col-md-4">
-      <div class="card design-card p-3 text-center shadow-sm border-0">
-        <i class="fa-solid fa-warehouse fa-2x mb-2 text-info"></i>
-        <h6>Estanterías</h6>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="card design-card p-3 text-center shadow-sm border-0">
-        <i class="fa-solid fa-boxes-stacked fa-2x mb-2 text-warning"></i>
-        <h6>Cajas de almacenamiento</h6>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="card design-card p-3 text-center shadow-sm border-0">
-        <i class="fa-solid fa-house-chimney fa-2x mb-2 text-danger"></i>
-        <h6>Casas de juguete o mascotas</h6>
-      </div>
-    </div>
-    <div class="col-md-4">
-  <div class="card design-card p-3 text-center shadow-sm border-0">
-    <i class="fa-solid fa-lightbulb fa-2x mb-2 text-primary"></i>
-    <h6>Lámparas</h6>
-  </div>
-</div>
-<div class="col-md-4">
-  <div class="card design-card p-3 text-center shadow-sm border-0">
-    <i class="fa-solid fa-shield-halved fa-2x mb-2 text-warning"></i>
-    <h6>Recubrimiento de focos</h6>
-  </div>
-</div>
-
-<div class="col-md-4">
-  <div class="card design-card p-3 text-center shadow-sm border-0">
-    <i class="fa-solid fa-moon fa-2x mb-2 text-secondary"></i>
-    <h6>Lámparas de noche</h6>
-  </div>
-</div>
-<div class="col-md-4">
-  <div class="card design-card p-3 text-center shadow-sm border-0">
-    <i class="fa-solid fa-lightbulb fa-2x mb-2 text-info"></i>
-    <h6>Lámparas de mesa</h6>
-  </div>
-</div>
-
-<div class="col-md-4">
-  <div class="card design-card p-3 text-center shadow-sm border-0">
-    <i class="fa-solid fa-gift fa-2x mb-2 text-danger"></i>
-    <h6>Adornos de festividades</h6>
-  </div>
-</div>
-
-<div class="col-md-4">
-  <div class="card design-card p-3 text-center shadow-sm border-0">
-    <i class="fa-solid fa-landmark fa-2x mb-2 text-warning"></i>
-    <h6>Esculturas</h6>
-  </div>
-</div>
-
-<div class="col-md-4">
-  <div class="card design-card p-3 text-center shadow-sm border-0">
-    <i class="fa-solid fa-cake-candles fa-2x mb-2 text-success"></i>
-    <h6>Recuerdos de fiesta</h6>
-  </div>
-</div>
-
-    </div>
-  </div>
-</div>
-
-<!-- Extras -->
-<div class="tab-pane fade" id="extras" role="tabpanel" aria-labelledby="extras-tab">
-  <div class="row g-4">
-    <div class="col-md-4">
-      <div class="card design-card p-3 text-center shadow-sm border-0">
-        <i class="fa-solid fa-star fa-2x mb-2 text-danger"></i>
-        <h6>Decoraciones</h6>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="card design-card p-3 text-center shadow-sm border-0">
-        <i class="fa-solid fa-book fa-2x mb-2 text-info"></i>
-        <h6>Material didáctico</h6>
-      </div>
-    </div>
-    <div class="col-md-4">
-  <div class="card design-card p-3 text-center shadow-sm border-0">
-    <i class="fa-solid fa-puzzle-piece fa-2x mb-2 text-primary"></i>
-    <h6>Rompecabezas</h6>
-  </div>
-</div>
-
-<!-- Esquemas -->
-<div class="col-md-4">
-  <div class="card design-card p-3 text-center shadow-sm border-0">
-    <i class="fa-solid fa-diagram-project fa-2x mb-2 text-warning"></i>
-    <h6>Esquemas</h6>
-  </div>
-</div>
-
-<!-- Sellos -->
-<div class="col-md-4">
-  <div class="card design-card p-3 text-center shadow-sm border-0">
-    <i class="fa-solid fa-stamp fa-2x mb-2 text-success"></i>
-    <h6>Sellos</h6>
-  </div>
-</div>
-  </div>
-</div>
+<!-- Texto animado debajo del carrusel -->
+  <div class="animated-words" id="animatedWords"></div>
+</section>
+   
 
 <!-- Servicios Extra -->
 <section id="servicios-extra" class="py-5 text-center">
   <div class="container">
-    <h2 class="fw-bold mb-3" data-aos="fade-up">Servicios Extra</h2>
+    <h2 class="fw-bold mb-3 text-primary" data-aos="fade-up">✨Servicios Extra✨</h2>
     <p class="mb-5 text-muted" data-aos="fade-up" data-aos-delay="100">
       Complementa tus proyectos con nuestros servicios adicionales de acabado.
     </p>
@@ -897,7 +868,7 @@ textarea.form-control {
  <!-- Proceso -->
 <section id="proceso" class="py-5 bg-light text-center">
   <div class="container">
-    <h2 class="fw-bold mb-5" data-aos="fade-up">✨ Nuestro Proceso ✨</h2>
+    <h2 class="fw-bold mb-5 text-primary" data-aos="fade-up">✨ Nuestro Proceso ✨</h2>
     <div class="row g-4 justify-content-center">
       
       <!-- Paso 1 -->
@@ -960,36 +931,64 @@ textarea.form-control {
 </section>
 
 
-  <!-- Testimonios -->
-<section id="testimonios" class="py-5">
+<!-- Testimonios -->
+<section id="testimonios" class="py-5 bg-light">
   <div class="container text-center">
-    <h2 class="fw-bold mb-5" data-aos="fade-up">💬 Lo que Dicen Nuestros Clientes 💬 </h2>
-    <div class="row g-4 mt-4 justify-content-center">
-      
-      <!-- Testimonio 1 -->
-      <div class="col-md-4" data-aos="flip-left">
-        <div class="testimonial-card">
-          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Cliente 1" class="testimonial-img">
-          <p class="testimonial-text">"Increíble calidad y rapidez. Mis piezas quedaron perfectas."</p>
-          <strong class="testimonial-name">- Laura G.</strong>
+    <h2 class="fw-bold mb-5 text-primary" data-aos="fade-up">
+      <i class="bi bi-chat-dots-fill text-info me-2"></i>
+      Lo que Dicen Nuestros Clientes
+      <i class="bi bi-chat-dots-fill text-info ms-2"></i>
+    </h2>
+
+    <div class="row g-4 justify-content-center">
+
+      <!-- Tarjeta 1 -->
+      <div class="col-md-4">
+        <div class="testimonial-card" onclick="this.classList.toggle('flipped')">
+          <!-- Frente -->
+          <div class="card-front">
+            <div class="img-container" data-bs-toggle="modal" data-bs-target="#modal1">
+              <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Cliente 1">
+              <span class="pulse-dot"></span>
+            </div>
+            <strong class="d-block mt-2">Laura G.</strong>
+          </div>
+          <!-- Reverso -->
+          <div class="card-back">
+            <p class="testimonial-text">✨ “Increíble calidad y rapidez. Mis piezas quedaron perfectas.” ✨</p>
+          </div>
         </div>
       </div>
 
-      <!-- Testimonio 2 -->
-      <div class="col-md-4" data-aos="flip-left" data-aos-delay="200">
-        <div class="testimonial-card">
-          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Cliente 2" class="testimonial-img">
-          <p class="testimonial-text">"La mejor opción para impresión 3D, atención personalizada."</p>
-          <strong class="testimonial-name">- Carlos R.</strong>
+      <!-- Tarjeta 2 -->
+      <div class="col-md-4">
+        <div class="testimonial-card" onclick="this.classList.toggle('flipped')">
+          <div class="card-front">
+            <div class="img-container" data-bs-toggle="modal" data-bs-target="#modal2">
+              <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Cliente 2">
+              <span class="pulse-dot"></span>
+            </div>
+            <strong class="d-block mt-2">Carlos R.</strong>
+          </div>
+          <div class="card-back">
+            <p class="testimonial-text">✨ “La mejor opción para impresión 3D, atención personalizada.” ✨</p>
+          </div>
         </div>
       </div>
 
-      <!-- Testimonio 3 -->
-      <div class="col-md-4" data-aos="flip-left" data-aos-delay="400">
-        <div class="testimonial-card">
-          <img src="https://randomuser.me/api/portraits/men/77.jpg" alt="Cliente 3" class="testimonial-img">
-          <p class="testimonial-text">"Gracias al taller pude materializar mis proyectos de diseño."</p>
-          <strong class="testimonial-name">- Andrés T.</strong>
+      <!-- Tarjeta 3 -->
+      <div class="col-md-4">
+        <div class="testimonial-card" onclick="this.classList.toggle('flipped')">
+          <div class="card-front">
+            <div class="img-container" data-bs-toggle="modal" data-bs-target="#modal3">
+              <img src="https://randomuser.me/api/portraits/men/77.jpg" alt="Cliente 3">
+              <span class="pulse-dot"></span>
+            </div>
+            <strong class="d-block mt-2">Andrés T.</strong>
+          </div>
+          <div class="card-back">
+            <p class="testimonial-text">✨ “Gracias al taller pude materializar mis proyectos de diseño.” ✨</p>
+          </div>
         </div>
       </div>
 
@@ -997,10 +996,40 @@ textarea.form-control {
   </div>
 </section>
 
+<!-- Modales -->
+<div class="modal fade" id="modal1" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content p-3 text-center">
+      <img src="https://randomuser.me/api/portraits/women/44.jpg" class="img-fluid rounded-circle mb-3" width="150">
+      <h5>Laura G.</h5>
+      <p class="text-muted">Trabajo realizado en Ciudad de México</p>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modal2" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content p-3 text-center">
+      <img src="https://randomuser.me/api/portraits/men/32.jpg" class="img-fluid rounded-circle mb-3" width="150">
+      <h5>Carlos R.</h5>
+      <p class="text-muted">Trabajo realizado en Guadalajara</p>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modal3" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content p-3 text-center">
+      <img src="https://randomuser.me/api/portraits/men/77.jpg" class="img-fluid rounded-circle mb-3" width="150">
+      <h5>Andrés T.</h5>
+      <p class="text-muted">Trabajo realizado en Monterrey</p>
+    </div>
+  </div>
+</div>
   <!-- FAQ -->
   <section id="faq" class="py-5 bg-light">
     <div class="container">
-      <h2 class="text-center" data-aos="fade-up">Preguntas Frecuentes</h2>
+      <h2 class="text-center text-primary" data-aos="fade-up">Preguntas Frecuentes❓</h2>
       <div class="accordion mt-4" id="faqAccordion">
         <div class="accordion-item" data-aos="fade-up">
           <h2 class="accordion-header">
@@ -1169,6 +1198,34 @@ textarea.form-control {
       logoModal.show();
     });
   </script>
+
+ <script>
+    // Cuando cargue la página, espera 2.5 segundos y oculta el splash
+    window.addEventListener("load", () => {
+      setTimeout(() => {
+        document.getElementById("splash").classList.add("hidden");
+      }, 2500); // 2.5 segundos
+    });
+  </script>
+  <script>
+  const words = [
+    "Recuerda", "tu", "diseño", "en", "mente", "lo", "volvemos", "realidad."
+  ];
+  const colors = [
+    "#ff512f", "#dd2476", "#ff9f1c", "#2ec4b6",
+    "#5c6bc0", "#009688", "#ff4081", "#7e57c2"
+  ];
+
+  const container = document.getElementById("animatedWords");
+
+  words.forEach((word, i) => {
+    const span = document.createElement("span");
+    span.textContent = word;
+    span.style.color = colors[i % colors.length];
+    span.style.animationDelay = `${i * 0.4}s`; // retraso por palabra
+    container.appendChild(span);
+  });
+</script>
 
   </script>
 </body>
