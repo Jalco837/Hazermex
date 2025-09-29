@@ -1,0 +1,128 @@
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background:linear-gradient(-45deg, #f3e8ff, #a0c4ff, #caf0f8, #d3f9d8);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      padding: 40px 20px;
+      min-height: 100vh;
+    }
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-weight: 800;
+      color: #fff;
+      white-space: normal; 
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+      letter-spacing: 2px;
+      font-size: 2.4rem;
+    }
+
+    .btn-secondary {
+      border-radius: 30px;
+      padding: 12px 28px;
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 30px;
+      transition: all 0.3s ease;
+      background-color: #fff;
+      color: #2575fc;
+      border: none;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    }
+    .btn-secondary:hover {
+      transform: scale(1.05);
+      background-color: #f0f0f0;
+    }
+
+    .card {
+      border: none;
+      border-radius: 25px;
+      background: rgba(255,255,255,0.5);
+      box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+      transition: transform 0.4s, box-shadow 0.4s;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.8s forwards;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .card:hover {
+      transform: translateY(-10px) scale(1.05);
+      box-shadow: 0 25px 35px rgba(0,0,0,0.25);
+    }
+
+    .card-img-top {
+      height: 220px;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+      border-bottom: 1px solid #ddd;
+    }
+    .card-img-top:hover {
+      transform: scale(1.1) rotate(1deg);
+    }
+
+    .card-body {
+      text-align: center;
+      padding: 20px;
+    }
+    .card-title {
+      font-weight: 700;
+      font-size: 1.4rem;
+      color: #333;
+    }
+    .card-text span {
+      font-weight: 600;
+      color: #555;
+    }
+    .btn-warning {
+      border-radius: 30px;
+      padding: 12px 25px;
+      font-size: 16px;
+      font-weight: bold;
+      background: linear-gradient(45deg, #ff512f, #dd2476);
+      border: none;
+      color: #fff;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+    .btn-warning:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+    .no-disponible {
+      margin-top: 10px;
+      font-weight: bold;
+      color: #e74c3c;
+      font-size: 1rem;
+    }
+
+    /* Modal */
+    .modal-content {
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+    }
+    .modal-body img {
+      border-radius: 15px;
+    }
+    .modal-footer {
+      justify-content: center;
+      border-top: none;
+    }
+ 
+  
